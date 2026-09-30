@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>miECOM — Portal Corporativo</title>
+  <link rel="icon" type="image/png" href="img/mi-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="vendor/flatpickr/flatpickr.min.css">
+  <script src="vendor/flatpickr/flatpickr.min.js"></script>
+  <link rel="stylesheet" href="styles.css?v=88">
+</head>
+<script>
+  var NEWS_DATA = {
+    'ia-debate': {
+      img: 'img/noticia3.png',
+      tag: 'Institucional',
+      title: 'ECOM participó del Debate IA+ sobre conectividad',
+      deck: 'Un panel de referentes del sector debatió los desafíos de conectividad frente a la inteligencia artificial.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 312,
+      comments: 8,
+      likesBase: 34,
+      likesNames: ['Martina Gómez', 'Diego Fernández'],
+      body: [
+        'Representantes de la empresa participaron del panel «Las SAPEM frente al desafío de la conectividad IA Ready», junto a otros referentes del sector, en el marco de un encuentro sobre tecnología y conectividad.',
+        'El espacio reunió a especialistas para debatir los desafíos que enfrentan las empresas de servicios frente a la adopción de inteligencia artificial, con especial foco en la infraestructura de conectividad necesaria para sostener estos procesos.',
+        'Durante el panel se remarcó la importancia de contar con redes robustas y escalables como base para cualquier proyecto de digitalización, y se compartieron experiencias concretas de implementación en distintas localidades.',
+        'La empresa remarcó su compromiso de seguir participando en este tipo de espacios de intercambio, que permiten conocer de primera mano las tendencias del sector y las necesidades de los organismos con los que se trabaja.'
+      ]
+    },
+    'smartcity-expo': {
+      img: 'img/noticia2.jpeg',
+      tag: 'Institucional',
+      title: 'Presencia en SmartCity Expo Santiago del Estero',
+      deck: 'El equipo estuvo presente en un espacio clave de intercambio sobre ciudades inteligentes y conectividad.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 198,
+      comments: 4,
+      likesBase: 21,
+      likesNames: ['Sofía Ramírez', 'Pablo Cáceres'],
+      body: [
+        'Miembros del equipo estuvieron presentes en la SmartCity Expo Santiago del Estero, un espacio de encuentro sobre ciudades inteligentes y conectividad, con expositores de distintos puntos del país.',
+        'Durante la jornada se recorrieron los distintos stands y se participó de charlas sobre infraestructura, gestión de servicios y proyectos de innovación aplicados a organismos públicos.',
+        'El equipo también mantuvo reuniones con referentes de otras empresas del sector, en las que se compartieron experiencias sobre despliegue de redes y atención al usuario final.',
+        'La participación reafirma el compromiso de la empresa con la innovación y el intercambio con otros actores del sector, y deja abiertas nuevas posibilidades de colaboración a futuro.'
+      ]
+    },
+    'entrega-indumentaria': {
+      img: 'img/noticia1.png',
+      tag: 'RRHH',
+      title: 'Entrega de indumentaria y equipamiento al personal',
+      deck: 'Nuevo recambio de indumentaria y calzado de seguridad para el equipo técnico.',
+      date: 'Julio 2026',
+      author: 'Recursos Humanos',
+      views: 456,
+      comments: 12,
+      likesBase: 47,
+      likesNames: ['Lucas Ibáñez', 'Carla Medina'],
+      body: [
+        'Se realizó la entrega de ropa de trabajo, calzado de seguridad y equipamiento técnico al personal, como parte del recambio periódico de indumentaria.',
+        'La entrega incluyó camperas, pantalones, botines de seguridad y elementos de protección personal, seleccionados según las tareas específicas de cada área.',
+        'El operativo se llevó a cabo de forma escalonada por sector, para no interferir con las actividades diarias, y estuvo acompañado por personal de Recursos Humanos disponible para resolver dudas puntuales.',
+        'La iniciativa busca garantizar las condiciones de seguridad y comodidad necesarias para las tareas diarias del equipo, y se enmarca en la política de renovación periódica de indumentaria de la empresa.'
+      ]
+    },
+    'conectividad-registro-civil': {
+      img: 'img/noticia4.png',
+      tag: 'Territorio',
+      title: 'Ampliamos la conectividad en el Registro Civil',
+      deck: 'Sumamos una nueva dependencia pública a la red de conectividad de la empresa.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 145,
+      comments: 3,
+      likesBase: 18,
+      likesNames: ['Andrés Zuleta', 'Rocío Paz'],
+      body: [
+        'Continuamos llevando conectividad a más dependencias públicas, sumando al Registro Civil a la red de servicios.',
+        'Los trabajos incluyeron la instalación de un enlace satelital y equipamiento de red, permitiendo que la dependencia cuente con conexión estable para sus sistemas de gestión.',
+        'El equipo técnico realizó las tareas de instalación y configuración en articulación con el personal del Registro Civil, minimizando el tiempo de interrupción del servicio al público.',
+        'Este tipo de trabajos forma parte del plan de expansión de infraestructura de la empresa en distintas localidades, con el objetivo de acercar conectividad a más dependencias públicas de la provincia.'
+      ]
+    },
+    'jornada-equipo': {
+      img: 'img/noticia1.png',
+      tag: 'RRHH',
+      title: 'Nueva jornada de integración del equipo',
+      deck: 'Un espacio de encuentro para todo el equipo, pensado para fortalecer el trabajo conjunto.',
+      date: 'Julio 2026',
+      author: 'Recursos Humanos',
+      views: 210,
+      comments: 6,
+      likesBase: 12,
+      likesNames: ['Julieta Romero', 'Nicolás Aguirre'],
+      body: [
+        'El equipo se reunió en una nueva jornada de integración, un espacio pensado para fortalecer los vínculos y el trabajo conjunto entre las distintas áreas.',
+        'La jornada incluyó dinámicas grupales, un espacio de intercambio abierto entre áreas y un cierre compartido, con buena participación de todo el equipo.',
+        'Este tipo de encuentros busca generar espacios distendidos por fuera de la rutina diaria, donde las personas puedan conocerse mejor y fortalecer la comunicación entre equipos.',
+        'Este tipo de encuentros forma parte de las actividades que la empresa impulsa periódicamente para el equipo, y ya se está pensando en una próxima edición.'
+      ]
+    },
+    'orgullo-ciberseguridad': {
+      img: 'img/noticia5.png',
+      tag: 'RRHH',
+      title: 'Orgullo ECOM: el directorio de la empresa felicita a Sergio Gramajo y al equipo de la UTN Resistencia por su histórico logro en ciberseguridad mundial',
+      deck: 'El equipo representó al país en una competencia internacional de ciberseguridad y alcanzó un resultado histórico.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 520,
+      comments: 24,
+      likesBase: 88,
+      likesNames: ['Sergio Gramajo', 'Equipo UTN Resistencia'],
+      body: [
+        'El directorio de la empresa felicitó públicamente a Sergio Gramajo y al equipo de la UTN Resistencia por el histórico logro obtenido en una competencia internacional de ciberseguridad.',
+        'El equipo compitió contra representantes de distintos países, destacándose por su nivel técnico y su capacidad de resolución de desafíos complejos en tiempo real.',
+        'Desde la empresa se remarcó el orgullo de contar con talento formado en la región, y el compromiso de seguir acompañando este tipo de iniciativas vinculadas a la tecnología y la formación técnica.',
+        'El logro fue celebrado internamente como un ejemplo del potencial del talento local en un área cada vez más estratégica para las organizaciones.'
+      ]
+    },
+    'convenio-colonia-benitez': {
+      img: 'img/noticia6.png',
+      tag: 'Territorio',
+      title: 'La transformación digital sigue avanzando: firmamos un convenio con Colonia Benítez para modernizar la gestión municipal',
+      deck: 'El acuerdo busca digitalizar procesos administrativos y mejorar la atención al vecino en el municipio.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 210,
+      comments: 5,
+      likesBase: 30,
+      likesNames: ['Equipo Territorio', 'Municipalidad de Colonia Benítez'],
+      body: [
+        'La empresa firmó un convenio con el municipio de Colonia Benítez orientado a modernizar y digitalizar distintos procesos de la gestión municipal.',
+        'El acuerdo contempla la implementación de herramientas digitales que agilicen los trámites y mejoren la atención a los vecinos.',
+        'Este tipo de convenios forma parte de la estrategia de la empresa de acompañar a los municipios de la provincia en sus procesos de modernización.',
+        'Se espera que las primeras mejoras estén disponibles en los próximos meses, con una implementación gradual junto al equipo municipal.'
+      ]
+    },
+    'multitienda-chaco': {
+      img: 'img/noticia7.png',
+      tag: 'Institucional',
+      title: 'ECOM participó del desarrollo de "Multitienda Chaco", la nueva plataforma digital para potenciar la producción chaqueña',
+      deck: 'La plataforma conecta a productores locales con nuevos canales de venta digital.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 340,
+      comments: 9,
+      likesBase: 52,
+      likesNames: ['Equipo de Desarrollo'],
+      body: [
+        'La empresa participó del desarrollo de "Multitienda Chaco", una nueva plataforma digital pensada para potenciar la producción y el comercio local.',
+        'La herramienta permite a productores y comerciantes de la provincia contar con un canal de venta digital propio, ampliando su alcance más allá del punto de venta físico.',
+        'El desarrollo fue realizado en conjunto con otros organismos, aportando la experiencia técnica de la empresa en plataformas digitales.',
+        'Se espera que la plataforma siga sumando funcionalidades en el corto plazo, en base al feedback de los primeros usuarios.'
+      ]
+    },
+    'pruebas-satelital-multiorbita': {
+      img: 'img/noticia8.png',
+      tag: 'Territorio',
+      title: 'ECOM inicia pruebas de desempeño con tecnología satelital multiórbita en Registros Civiles',
+      deck: 'Las pruebas buscan mejorar la calidad y estabilidad de la conectividad en dependencias públicas.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 180,
+      comments: 6,
+      likesBase: 27,
+      likesNames: ['Equipo Técnico'],
+      body: [
+        'La empresa inició pruebas de desempeño con tecnología satelital multiórbita en distintos Registros Civiles de la provincia.',
+        'Este tipo de tecnología combina satélites en diferentes órbitas para mejorar la latencia y la estabilidad de la conexión en zonas donde la conectividad tradicional es más limitada.',
+        'Las pruebas permitirán evaluar el rendimiento real en condiciones de uso y definir los próximos pasos para una eventual implementación más amplia.',
+        'El objetivo final es seguir mejorando la calidad de conectividad disponible en las dependencias públicas de la provincia.'
+      ]
+    },
+    'alianza-telecentro': {
+      img: 'img/noticia9.jpg',
+      tag: 'Institucional',
+      title: 'Alianza tecnológica: ECOM y Telecentro firman acuerdo estratégico para continuar fortaleciendo la infraestructura tecnológica de Chaco',
+      deck: 'El acuerdo apunta a ampliar la capacidad de red y los servicios tecnológicos disponibles en la provincia.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 275,
+      comments: 7,
+      likesBase: 41,
+      likesNames: ['Dirección Comercial'],
+      body: [
+        'La empresa firmó un acuerdo estratégico con Telecentro orientado a continuar fortaleciendo la infraestructura tecnológica disponible en la provincia.',
+        'La alianza contempla trabajo conjunto en distintos frentes, con el objetivo de ampliar la capacidad de red y mejorar los servicios tecnológicos ofrecidos.',
+        'Este tipo de acuerdos forma parte de la estrategia de la empresa de sumar aliados que aporten capacidad técnica y de infraestructura.',
+        'Desde ambas empresas se remarcó el compromiso de seguir invirtiendo en la modernización tecnológica de la región.'
+      ]
+    },
+    'escuelas-rurales-conectividad': {
+      img: 'img/noticia10.jpg',
+      tag: 'Territorio',
+      title: 'ECOM Chaco S.A. lidera la transformación digital: 97 escuelas rurales ya cuentan con conectividad satelital',
+      deck: 'El proyecto acerca conectividad a instituciones educativas de zonas rurales de la provincia.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 610,
+      comments: 18,
+      likesBase: 95,
+      likesNames: ['Equipo Territorio'],
+      body: [
+        'Ya son 97 las escuelas rurales de la provincia que cuentan con conectividad satelital gracias al trabajo conjunto de la empresa con distintos organismos.',
+        'El proyecto busca reducir la brecha digital en zonas rurales, donde el acceso a internet de calidad suele ser más limitado.',
+        'La conectividad permite a docentes y estudiantes acceder a recursos educativos digitales y participar de instancias de capacitación a distancia.',
+        'Desde la empresa se remarcó que el objetivo es seguir sumando instituciones educativas a la red en los próximos meses.'
+      ]
+    },
+    'sgt-restablecido': {
+      img: 'img/noticia11.jpg',
+      tag: 'Institucional',
+      title: 'El Sistema de Trámites Digitales -SGT se restablece por completo y vuelve a estar operativo',
+      deck: 'Tras las tareas de mantenimiento, el sistema ya funciona con normalidad para todos los usuarios.',
+      date: 'Julio 2026',
+      author: 'Soporte Técnico',
+      views: 430,
+      comments: 15,
+      likesBase: 22,
+      likesNames: ['Equipo de Soporte Técnico'],
+      body: [
+        'El Sistema de Trámites Digitales (SGT) se restableció por completo y ya vuelve a estar operativo con normalidad para todos los usuarios.',
+        'Las tareas de mantenimiento realizadas apuntaron a mejorar la estabilidad y el rendimiento general del sistema.',
+        'Durante el proceso, el equipo de soporte técnico trabajó para minimizar el tiempo de interrupción del servicio.',
+        'Ante cualquier inconveniente, se recomienda a los usuarios comunicarse con el área de soporte técnico correspondiente.'
+      ]
+    },
+    'control-stock-educacion': {
+      img: 'img/noticia12.jpg',
+      tag: 'Institucional',
+      title: 'Más control y transparencia: Educación y ECOM implementan un sistema para ordenar el stock de compras',
+      deck: 'La herramienta permite un seguimiento más claro y ordenado de las compras e insumos.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 160,
+      comments: 4,
+      likesBase: 19,
+      likesNames: ['Equipo de Sistemas'],
+      body: [
+        'En conjunto con el área de Educación, la empresa implementó un nuevo sistema para ordenar y controlar el stock de compras.',
+        'La herramienta permite llevar un seguimiento más claro de los insumos, mejorando la transparencia en la gestión de compras.',
+        'Este tipo de desarrollos forma parte del trabajo conjunto entre distintas áreas para optimizar procesos internos.',
+        'Se espera que el sistema siga incorporando mejoras a partir del uso diario y el feedback de los equipos involucrados.'
+      ]
+    },
+    'modernizacion-control-transparencia': {
+      img: 'img/noticia13.jpg',
+      tag: 'Institucional',
+      title: 'Modernización y Control: "Nuevas medidas que garantizarán más transparencia en ECOM"',
+      deck: 'La empresa anuncia un conjunto de medidas orientadas a fortalecer los procesos de control interno.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 295,
+      comments: 11,
+      likesBase: 33,
+      likesNames: ['Dirección Ejecutiva'],
+      body: [
+        'La empresa anunció un conjunto de nuevas medidas orientadas a fortalecer la transparencia y el control de sus procesos internos.',
+        'Las medidas contemplan mejoras en los circuitos administrativos y una mayor trazabilidad en distintas áreas de gestión.',
+        'Desde la dirección se remarcó que estas acciones buscan consolidar una cultura organizacional basada en la transparencia y la mejora continua.',
+        'La implementación se realizará de forma progresiva, con acompañamiento a los equipos involucrados en cada etapa.'
+      ]
+    },
+    'internet-escuelas-interior': {
+      img: 'img/noticia14.jpg',
+      tag: 'Territorio',
+      title: 'ECOM impulsa el acceso a Internet en las escuelas del interior del Chaco',
+      deck: 'El proyecto busca acercar conectividad de calidad a instituciones educativas del interior provincial.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 380,
+      comments: 10,
+      likesBase: 58,
+      likesNames: ['Equipo Territorio'],
+      body: [
+        'La empresa continúa impulsando el acceso a Internet en escuelas del interior de la provincia, ampliando la cobertura hacia nuevas localidades.',
+        'El proyecto se enmarca en el objetivo de reducir la brecha digital entre las zonas urbanas y el interior provincial.',
+        'La conectividad permite a las instituciones educativas acceder a recursos digitales y mejorar la comunicación con otras dependencias.',
+        'Desde la empresa se remarcó el compromiso de seguir sumando localidades del interior a la red de conectividad.'
+      ]
+    },
+    'inversiones-conectividad-satelital': {
+      img: 'img/noticia15.jpg',
+      tag: 'Institucional',
+      title: 'Ecom Chaco presentó nuevas inversiones tecnológicas y refuerza su apuesta a la conectividad satelital',
+      deck: 'La empresa anunció una serie de inversiones destinadas a modernizar su infraestructura y ampliar el alcance de la conectividad satelital en la provincia.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 410,
+      comments: 13,
+      likesBase: 62,
+      likesNames: ['Dirección Ejecutiva'],
+      body: [
+        'Ecom Chaco presentó un nuevo paquete de inversiones tecnológicas orientadas a modernizar su infraestructura y fortalecer la calidad de sus servicios.',
+        'Entre los ejes principales se destaca el refuerzo de la apuesta a la conectividad satelital, una tecnología que permite llegar con mayor eficiencia a zonas de difícil acceso.',
+        'Desde la empresa señalaron que estas inversiones buscan acompañar el crecimiento de la demanda y consolidar una red más robusta en todo el territorio provincial.',
+        'Se espera que las mejoras se traduzcan en una mayor estabilidad y alcance del servicio para los usuarios de las distintas localidades del Chaco.'
+      ]
+    },
+    'gestion-energetica-climatica-smart': {
+      img: 'img/noticia16.png',
+      tag: 'Institucional',
+      title: 'ECOM Chaco lidera la innovación en Gestión Energética y Climática con prototipos "Smart"',
+      deck: 'La empresa desarrolla prototipos inteligentes orientados a optimizar el uso de la energía y el monitoreo climático.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 275,
+      comments: 9,
+      likesBase: 41,
+      likesNames: ['Equipo de Innovación'],
+      body: [
+        'ECOM Chaco avanza en el desarrollo de prototipos "Smart" orientados a mejorar la gestión energética y el monitoreo de variables climáticas.',
+        'Estos desarrollos permiten optimizar el uso de la energía y anticipar condiciones climáticas que puedan afectar la operación de los servicios.',
+        'La iniciativa forma parte de una estrategia de innovación interna que busca incorporar tecnología de punta a los procesos de la empresa.',
+        'Desde la empresa destacaron el trabajo del equipo de innovación y adelantaron que continuarán avanzando en nuevos desarrollos "Smart".'
+      ]
+    },
+    'elecciones-legislativas-eficiencia': {
+      img: 'img/noticia17.png',
+      tag: 'Institucional',
+      title: 'Elecciones Legislativas en Chaco: ECOM destaca eficiencia histórica',
+      deck: 'La empresa acompañó la jornada electoral garantizando la continuidad y estabilidad de los servicios en toda la provincia.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 340,
+      comments: 8,
+      likesBase: 47,
+      likesNames: ['Dirección Ejecutiva'],
+      body: [
+        'Durante la jornada de las Elecciones Legislativas en Chaco, ECOM garantizó la continuidad de sus servicios en toda la provincia con niveles de eficiencia históricos.',
+        'Equipos técnicos trabajaron de forma coordinada para asegurar la estabilidad de la conectividad en los distintos puntos de votación y localidades.',
+        'Desde la empresa remarcaron el compromiso del personal, que se mantuvo disponible durante toda la jornada para responder ante cualquier eventualidad.',
+        'El resultado obtenido refuerza el rol de ECOM como actor clave en el acompañamiento de procesos institucionales de relevancia para la provincia.'
+      ]
+    },
+    'reciclaje-residuos-tecnologicos-utn-unne': {
+      img: 'img/noticia18.png',
+      tag: 'Territorio',
+      title: 'Recolección de residuos tecnológicos: exitosa vinculación entre Ecom Chaco, el municipio, la UTN y UNNE',
+      deck: 'La iniciativa conjunta permitió recolectar y dar disposición final responsable a residuos electrónicos en la comunidad.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 220,
+      comments: 6,
+      likesBase: 35,
+      likesNames: ['Equipo Territorio'],
+      body: [
+        'Ecom Chaco participó de una jornada de recolección de residuos tecnológicos junto al municipio, la UTN y la UNNE.',
+        'La iniciativa buscó promover la disposición final responsable de equipos electrónicos en desuso, fomentando el cuidado del medio ambiente.',
+        'La vinculación entre la empresa, instituciones educativas y el municipio permitió sumar puntos de recolección y llegar a más vecinos de la comunidad.',
+        'Desde ECOM destacaron la importancia de este tipo de articulaciones para seguir promoviendo prácticas sustentables en el territorio.'
+      ]
+    },
+    'nuevo-liderazgo-vision-innovadora': {
+      img: 'img/noticia19.png',
+      tag: 'Institucional',
+      title: 'Transformación en ECOM: Un nuevo liderazgo con visión innovadora',
+      deck: 'La empresa avanza en un proceso de transformación interna de la mano de un nuevo liderazgo enfocado en la innovación.',
+      date: 'Julio 2026',
+      author: 'Comunicación Interna',
+      views: 300,
+      comments: 12,
+      likesBase: 44,
+      likesNames: ['Dirección Ejecutiva'],
+      body: [
+        'ECOM atraviesa un proceso de transformación interna impulsado por un nuevo liderazgo con una fuerte visión orientada a la innovación.',
+        'El cambio busca fortalecer la cultura organizacional y acompañar los desafíos tecnológicos que enfrenta la empresa en los próximos años.',
+        'Desde la dirección se remarcó la importancia de contar con equipos alineados a una visión de mejora continua y adaptación al cambio.',
+        'Se espera que este proceso siga consolidándose con nuevas iniciativas que profundicen la transformación de la empresa.'
+      ]
+    }
+  };
+
+  var NEWS_ORDER = [
+    'ia-debate', 'smartcity-expo', 'entrega-indumentaria', 'conectividad-registro-civil', 'jornada-equipo',
+    'orgullo-ciberseguridad', 'convenio-colonia-benitez', 'multitienda-chaco', 'pruebas-satelital-multiorbita',
+    'alianza-telecentro', 'escuelas-rurales-conectividad', 'sgt-restablecido', 'control-stock-educacion',
+    'modernizacion-control-transparencia', 'internet-escuelas-interior', 'inversiones-conectividad-satelital',
+    'gestion-energetica-climatica-smart', 'elecciones-legislativas-eficiencia', 'reciclaje-residuos-tecnologicos-utn-unne',
+    'nuevo-liderazgo-vision-innovadora'
+  ];
+  var NEWS_FILTERS = ['Institucional', 'RRHH', 'Territorio'];
+  var newsFilter = 'Institucional';
+  var newsLikedState = {};
+
+  /* Widget de Aplicaciones */
+  var APPS_DATA = [
+    { id: 'rrhh',    label: 'RRHH',            idle: 'img/rrhhblanco.svg',    active: 'img/rrhhcolor.svg',    enabled: true },
+    { id: 'correo',  label: 'Correo',          idle: 'img/correoblanco.svg',  active: 'img/correocolor.svg',  enabled: true },
+    { id: 'ecomweb', label: 'ECOM Web',        idle: 'img/ecomwebblanco.svg', active: 'img/ecomwebcolor.svg', enabled: true },
+    { id: 'gdp',     label: 'GDP',             idle: 'img/gdpblanco.svg',     active: 'img/gdpcolor.svg',     enabled: true },
+    { id: 'memos',   label: 'Memos',           idle: 'img/memosblanco.svg',   active: 'img/memoscolor.svg',   enabled: true },
+    { id: 'reserva', label: 'Reserva de Sala', idle: 'img/reservablanco.svg', active: 'img/reservacolor.svg', enabled: true },
+    { id: 'tgd',     label: 'TGD',             idle: 'img/tgdblanco.svg',     active: 'img/tgdcolor.svg',     enabled: true },
+    { id: 'tickets', label: 'Tickets',         idle: 'img/ticketsblanco.svg', active: 'img/ticketscolor.svg', enabled: true }
+  ];
+  var appsManageMode = false;
+  var appsActiveView = 'apps';
+  var APPS_LINKS = [];
+
+  function renderAppsGrid() {
+    var grid = document.getElementById('apps-quick-grid');
+    if (!grid) return;
+    var list = appsManageMode ? APPS_DATA : APPS_DATA.filter(function(a) { return a.enabled; });
+    grid.innerHTML = list.map(function(app) {
+      var toggleHtml = appsManageMode
+        ? '<button type="button" class="app-toggle-switch' + (app.enabled ? ' on' : '') + '" title="' + (app.enabled ? 'Desactivar' : 'Activar') + '" onclick="event.stopPropagation(); appsToggleEnabled(\'' + app.id + '\', this)"><span class="app-toggle-thumb-wrap"><span class="app-toggle-thumb"></span></span></button>'
+        : '';
+      return (
+        '<div class="app-box' + (appsManageMode ? ' manage-mode' : '') + (appsManageMode && !app.enabled ? ' disabled-app' : '') + '">' +
+          '<img src="' + app.idle + '" class="app-icon-swap app-icon-idle" alt="' + app.label + '">' +
+          '<img src="' + app.active + '" class="app-icon-swap app-icon-active" alt="' + app.label + '">' +
+          toggleHtml +
+        '</div>'
+      );
+    }).join('');
+    lucide.createIcons();
+  }
+
+  function appsToggleManageMode() {
+    appsManageMode = true;
+    appsUpdateHeaderButtons();
+    if (appsActiveView === 'apps') renderAppsGrid(); else renderAppsLinksView();
+  }
+
+  function appsToggleEnabled(id, btn) {
+    var app = APPS_DATA.filter(function(a) { return a.id === id; })[0];
+    if (!app) return;
+    if (app.enabled) {
+      var enabledCount = APPS_DATA.filter(function(a) { return a.enabled; }).length;
+      if (enabledCount <= 1) return;
+      app.enabled = false;
+    } else {
+      app.enabled = true;
+    }
+    if (!btn) { renderAppsGrid(); return; }
+    btn.classList.toggle('on', app.enabled);
+    btn.title = app.enabled ? 'Desactivar' : 'Activar';
+    var box = btn.closest('.app-box');
+    if (box) box.classList.toggle('disabled-app', !app.enabled);
+  }
+
+  function appsFinishManage() {
+    appsManageMode = false;
+    appsUpdateHeaderButtons();
+    if (appsActiveView === 'apps') renderAppsGrid(); else renderAppsLinksView();
+  }
+
+  function appsUpdateHeaderButtons() {
+    var swap = document.getElementById('apps-config-swap');
+    var finishBtn = document.getElementById('apps-finish-btn');
+    if (swap) swap.classList.toggle('manage-mode', appsManageMode);
+    if (finishBtn && appsManageMode) fitAppsHeaderBtnWidth(finishBtn);
+  }
+
+  function appsSwitchView(view) {
+    if (view === appsActiveView) view = (view === 'apps') ? 'links' : 'apps';
+    appsActiveView = view;
+    appsManageMode = false;
+    var segApps = document.getElementById('apps-seg-apps');
+    var segLinks = document.getElementById('apps-seg-links');
+    if (segApps) segApps.classList.toggle('active', view === 'apps');
+    if (segLinks) segLinks.classList.toggle('active', view === 'links');
+    var grid = document.getElementById('apps-quick-grid');
+    var linksView = document.getElementById('apps-links-view');
+    if (grid) grid.style.display = view === 'apps' ? '' : 'none';
+    if (linksView) linksView.style.display = view === 'links' ? '' : 'none';
+    appsUpdateHeaderButtons();
+    if (view === 'apps') renderAppsGrid(); else renderAppsLinksView();
+  }
+
+  function appsAddLink() {
+    var nameInput = document.getElementById('apps-link-name-input');
+    var urlInput = document.getElementById('apps-link-url-input');
+    if (!nameInput || !urlInput) return;
+    var name = nameInput.value.trim();
+    var url = urlInput.value.trim();
+    if (!name || !url) return;
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    APPS_LINKS.push({ id: 'link-' + Date.now(), name: name, url: url });
+    renderAppsLinksView();
+    var freshInput = document.getElementById('apps-link-name-input');
+    if (freshInput) freshInput.focus();
+  }
+  function appsRemoveLink(id) {
+    APPS_LINKS = APPS_LINKS.filter(function(l) { return l.id !== id; });
+    renderAppsLinksView();
+  }
+
+  function renderAppsLinksView() {
+    var wrap = document.getElementById('apps-links-view');
+    if (!wrap) return;
+    var addRowHtml = appsManageMode
+      ? '<div class="apps-link-add-row">' +
+          '<input type="text" id="apps-link-name-input" class="apps-link-input" placeholder="Nombre" onkeydown="if(event.key===\'Enter\')appsAddLink()">' +
+          '<input type="text" id="apps-link-url-input" class="apps-link-input" placeholder="https://..." onkeydown="if(event.key===\'Enter\')appsAddLink()">' +
+          '<button type="button" class="apps-link-add-btn" onclick="appsAddLink()"><i data-lucide="plus"></i><span class="apps-link-add-label">Agregar</span></button>' +
+        '</div>'
+      : '';
+    var listHtml;
+    if (APPS_LINKS.length === 0) {
+      listHtml =
+        '<div class="apps-link-empty">' +
+          '<div class="apps-link-empty-icon"><i data-lucide="link-2"></i></div>' +
+          '<span>Todavía no agregaste enlaces.</span>' +
+        '</div>';
+    } else {
+      listHtml = APPS_LINKS.map(function(l) {
+        var removeBtn = appsManageMode
+          ? '<button type="button" class="apps-link-item-remove" title="Quitar" onclick="appsRemoveLink(\'' + l.id + '\')"><i data-lucide="trash-2"></i></button>'
+          : '';
+        return (
+          '<div class="apps-link-item">' +
+            '<i data-lucide="link"></i>' +
+            '<a href="' + l.url + '" target="_blank" rel="noopener" class="apps-link-item-info"><span class="apps-link-item-name">' + l.name + '</span><span class="apps-link-item-url">' + l.url + '</span></a>' +
+            removeBtn +
+          '</div>'
+        );
+      }).join('');
+    }
+    wrap.innerHTML = addRowHtml + '<div class="apps-link-list">' + listHtml + '</div>';
+    lucide.createIcons();
+  }
+
+  /* Widget de Cumpleaños */
+  var CUMPLE_DATA = [
+    { id: 'diana-kemmer',  name: 'Diana Kemmer',   role: 'Asesora Comercial',        sector: 'Atención al Cliente',  location: 'Planta Baja - Sede Central', birthDate: '14 de julio', day: 14, month: 7, years: 3, photo: 'img/perfil2.jpg', isLeader: true },
+    { id: 'sergio-alvarez', name: 'Sergio Álvarez', role: 'Analista de Sistemas',     sector: 'Área de Desarrollo',   location: '2do Piso - Sede Central',    birthDate: '18 de julio', day: 18, month: 7, years: 6, photo: 'img/perfil1.jpg' },
+    { id: 'lucia-fernandez', name: 'Lucía Fernández', role: 'Analista de RRHH',       sector: 'Recursos Humanos',     location: '1er Piso - Sede Central',    birthDate: '21 de julio', day: 21, month: 7, years: 2, photo: 'img/perfil4.jpg' },
+    { id: 'martin-ibarra', name: 'Martín Ibarra',  role: 'Técnico de Territorio',     sector: 'NOC',                  location: 'Anexo Sáenz Peña',           birthDate: '28 de julio', day: 28, month: 7, years: 8, photo: 'img/perfil3.jpg' },
+    { id: 'rocio-paredes', name: 'Rocío Paredes',  role: 'Community Manager',         sector: 'Producción',           location: '2do Piso - Sede Central',    birthDate: '29 de julio', day: 29, month: 7, years: 4, photo: 'img/perfil6.jpg' },
+    { id: 'nahuel-torres', name: 'Nahuel Torres',  role: 'Asistente Administrativo',  sector: 'Administración',       location: 'Planta Baja - Sede Central', birthDate: '31 de julio', day: 31, month: 7, years: 1, photo: 'img/perfil5.jpg' },
+    { id: 'valentina-rios', name: 'Valentina Ríos', role: 'Diseñadora UX',            sector: 'Área de Desarrollo',   location: '2do Piso - Sede Central',    birthDate: '27 de julio', day: 27, month: 7, years: 5, photo: 'img/perfil2.jpg' },
+    { id: 'federico-suarez', name: 'Federico Suárez', role: 'Técnico de Redes',       sector: 'NOC',                  location: 'Anexo Sáenz Peña',           birthDate: '30 de julio', day: 30, month: 7, years: 3, photo: '' },
+    { id: 'camila-godoy',  name: 'Camila Godoy',   role: 'Asesora Comercial',         sector: 'Atención al Cliente',  location: 'Planta Baja - Sede Central', birthDate: '2 de agosto', day: 2, month: 8, years: 7, photo: '' }
+  ];
+  var CUMPLE_PAGE_SIZE = 2;
+  var cumplePage = 0;
+  var cumpleExpandedId = null;
+  var cumpleGreetedState = {};
+  var cumplePageDir = 1;
+  var cumpleView = 'stack';
+  var cumpleStackDate = null;
+
+  function cumpleGetWeekRange() {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var dow = today.getDay();
+    var mondayOffset = dow === 0 ? -6 : 1 - dow;
+    var monday = new Date(today);
+    monday.setDate(today.getDate() + mondayOffset);
+    var sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    return { monday: monday, sunday: sunday };
+  }
+
+  function cumpleIsInWeek(day, month, range) {
+    var years = [range.monday.getFullYear(), range.sunday.getFullYear()];
+    for (var i = 0; i < years.length; i++) {
+      var d = new Date(years[i], month - 1, day);
+      d.setHours(0, 0, 0, 0);
+      if (d >= range.monday && d <= range.sunday) return true;
+    }
+    return false;
+  }
+
+  function cumpleStackList() {
+    if (!cumpleStackDate) {
+      var range = cumpleGetWeekRange();
+      return CUMPLE_DATA.filter(function(p) { return cumpleIsInWeek(p.day, p.month, range); });
+    }
+    var parts = cumpleStackDate.split('-');
+    var month = parseInt(parts[1], 10);
+    var day = parseInt(parts[2], 10);
+    return CUMPLE_DATA.filter(function(p) { return p.day === day && p.month === month; });
+  }
+
+  function cumpleDiffDays(day, month) {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var year = today.getFullYear();
+    var best = null, bestAbs = Infinity;
+    [year - 1, year, year + 1].forEach(function(y) {
+      var d = new Date(y, month - 1, day);
+      d.setHours(0, 0, 0, 0);
+      var diff = Math.round((today - d) / 86400000);
+      if (Math.abs(diff) < bestAbs) { bestAbs = Math.abs(diff); best = diff; }
+    });
+    return best;
+  }
+
+  function cumpleCanGreet(day, month) {
+    var diff = cumpleDiffDays(day, month);
+    return diff >= 0 && diff <= 7;
+  }
+
+  function cumpleFormatDDMM(day, month) {
+    var dd = day < 10 ? '0' + day : '' + day;
+    var mm = month < 10 ? '0' + month : '' + month;
+    return dd + '/' + mm;
+  }
+
+  function cumpleShortName(name) {
+    var parts = name.trim().split(/\s+/);
+    if (parts.length < 2) return name;
+    var last = parts.pop();
+    return parts.join(' ') + ' ' + last.charAt(0).toUpperCase() + '.';
+  }
+
+  function cumpleFitNames(container) {
+    container.querySelectorAll('.cumple-name').forEach(function(el) {
+      var full = el.getAttribute('data-full-name');
+      if (!full) return;
+      el.textContent = full;
+      if (el.scrollWidth > el.clientWidth) {
+        el.textContent = cumpleShortName(full);
+      }
+    });
+  }
+
+  function cumpleOpenList() {
+    cumpleView = 'list';
+    cumplePage = 0;
+    renderCumpleWidget();
+  }
+
+  function cumpleBackToStack() {
+    cumpleView = 'stack';
+    cumpleExpandedId = null;
+    cumpleStackDate = null;
+    if (cumpleDatePicker) cumpleDatePicker.clear(false);
+    renderCumpleWidget();
+  }
+
+  function cumpleFilterByDate(value) {
+    cumpleStackDate = value || null;
+    cumpleView = 'stack';
+    renderCumpleWidget();
+  }
+
+  var cumpleDatePicker = null;
+  function cumpleInitDatePicker() {
+    var input = document.getElementById('cumple-date-input');
+    if (!input || !window.flatpickr) return;
+    cumpleDatePicker = flatpickr(input, {
+      dateFormat: 'Y-m-d',
+      disableMobile: true,
+      appendTo: document.body,
+      position: 'auto center',
+      positionElement: document.querySelector('.cumple-widget') || input,
+      closeOnSelect: false,
+      onChange: function(selectedDates, dateStr) { cumpleFilterByDate(dateStr); },
+      onReady: function(selectedDates, dateStr, instance) {
+        var closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'cumple-calendar-close-btn';
+        closeBtn.textContent = 'Cerrar';
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          instance.close();
+        });
+        instance.calendarContainer.appendChild(closeBtn);
+      }
+    });
+  }
+  function cumpleOpenCalendar() {
+    if (!cumpleDatePicker) return;
+    if (cumpleDatePicker.isOpen) cumpleDatePicker.close();
+    else cumpleDatePicker.open();
+  }
+  function cumpleSetCalendarBtnVisible(visible) {
+    var btn = document.getElementById('cumple-calendar-btn');
+    if (!btn) return;
+    btn.style.display = visible ? '' : 'none';
+    if (visible) fitAppsHeaderBtnWidth(btn);
+  }
+
+  function cumpleTotalPages() {
+    return Math.max(1, Math.ceil(cumpleStackList().length / CUMPLE_PAGE_SIZE));
+  }
+
+  function cumpleGoPage(delta) {
+    var total = cumpleTotalPages();
+    var next = Math.max(0, Math.min(total - 1, cumplePage + delta));
+    if (next === cumplePage) return;
+    cumplePageDir = next > cumplePage ? 1 : -1;
+    cumplePage = next;
+    renderCumpleWidget();
+  }
+
+  function cumpleExpand(id) {
+    cumpleExpandedId = (cumpleExpandedId === id) ? null : id;
+    renderCumpleWidget();
+  }
+
+  function cumpleSetGreeted(id, greeted) {
+    cumpleGreetedState[id] = greeted;
+    document.querySelectorAll('[data-greet-id="' + id + '"]').forEach(function(btn) {
+      btn.classList.toggle('greeted', greeted);
+      var label = btn.querySelector('.action-label');
+      if (label) label.textContent = greeted ? '¡Enviado!' : '¡Saludar!';
+      fitGreetBtnWidth(btn);
+      clearTimeout(btn._forceOpenTimer);
+      if (greeted) {
+        btn.classList.add('force-open');
+        btn._forceOpenTimer = setTimeout(function() { btn.classList.remove('force-open'); }, 2000);
+      } else {
+        btn.classList.remove('force-open');
+      }
+    });
+  }
+
+  function cumplePopConfetti(btn) {
+    var rect = btn.getBoundingClientRect();
+    var pop = document.createElement('span');
+    pop.className = 'cumple-greet-pop';
+    pop.textContent = '🎉';
+    pop.style.left = (rect.left + rect.width / 2) + 'px';
+    pop.style.top = rect.top + 'px';
+    document.body.appendChild(pop);
+    setTimeout(function() { pop.remove(); }, 700);
+  }
+
+  function cumpleGreet(id, btn) {
+    var greeted = !cumpleGreetedState[id];
+    cumpleSetGreeted(id, greeted);
+    if (greeted) cumplePopConfetti(btn);
+  }
+
+  function renderCumpleStack(pager, listLayer) {
+    pager.innerHTML = '';
+
+    var people = cumpleStackList();
+    var visible = people.slice(0, 3);
+    var extra = people.length - visible.length;
+
+    var agendaHtml =
+      '<div class="cumple-stack-agenda" title="Calendario" onclick="event.stopPropagation(); cumpleOpenCalendar()">' +
+        '<i data-lucide="calendar-days"></i>' +
+      '</div>';
+
+    var avatarsHtml = people.length === 0
+      ? '<div class="cumple-stack-empty-icon"><i data-lucide="cake-slice"></i></div>'
+      : visible.map(function(p, i) {
+          var z = 'z-index:' + (visible.length - i) + ';';
+          return p.photo
+            ? '<div class="cumple-stack-avatar" style="background-image:url(\'' + p.photo + '\'); ' + z + '"></div>'
+            : '<div class="cumple-stack-avatar cumple-avatar-placeholder" style="' + z + '"><i data-lucide="user-round"></i></div>';
+        }).join('') + (extra > 0 ? '<div class="cumple-stack-more">+' + extra + '</div>' : '');
+
+    var isWeekMode = !cumpleStackDate;
+    var label = isWeekMode
+      ? (people.length === 0 ? 'Sin cumpleaños esta semana'
+        : people.length === 1 ? '1 cumpleaños esta semana' : people.length + ' cumpleaños esta semana')
+      : (people.length === 0 ? 'Sin cumpleaños ese día'
+        : people.length === 1 ? '1 cumpleaños' : people.length + ' cumpleaños');
+
+    listLayer.innerHTML =
+      '<div class="cumple-stack-view">' +
+        '<div class="cumple-avatar-stack" onclick="cumpleOpenList()">' + agendaHtml + avatarsHtml + '</div>' +
+        '<div class="cumple-stack-label" onclick="cumpleOpenList()">' + label + '</div>' +
+      '</div>';
+
+    lucide.createIcons();
+
+    if (cumpleDatePicker) cumpleDatePicker.setDate(cumpleStackDate || null, false);
+  }
+
+  function cumpleCardHtml(p, i, slideClass) {
+    var greeted = !!cumpleGreetedState[p.id];
+    var isExpanded = cumpleExpandedId === p.id;
+    var isSibling = !!cumpleExpandedId && !isExpanded;
+    var itemClass = 'cumple-item' + (slideClass ? ' ' + slideClass : '') +
+      (isExpanded ? ' cumple-expanded' : '') +
+      (isSibling ? ' cumple-collapsed-sibling' : '');
+    var delayAttr = slideClass ? ' style="animation-delay:' + (i * 90) + 'ms"' : '';
+
+    var diffDays = cumpleDiffDays(p.day, p.month);
+    var isToday = diffDays === 0;
+    var greetLabel = greeted ? '¡Enviado!' : '¡Saludar!';
+    var statusText = isToday ? '¡Es hoy!'
+      : diffDays > 0 ? (diffDays === 1 ? 'Hace 1 día' : 'Hace ' + diffDays + ' días')
+      : (diffDays === -1 ? 'Falta 1 día' : 'Faltan ' + (-diffDays) + ' días');
+    var teamLabel = p.isLeader ? ('Líder • ' + p.sector) : p.sector;
+    var ddmm = cumpleFormatDDMM(p.day, p.month);
+    var pillDateHtml = ddmm + (isToday ? '<span class="cumple-pill-today"> - ¡Es hoy!</span>' : '');
+    var canGreet = cumpleCanGreet(p.day, p.month);
+    var greetDisabled = canGreet ? '' : ' disabled';
+    var pillAvatarHtml = p.photo
+      ? '<div class="cumple-avatar" style="background-image:url(\'' + p.photo + '\')" onclick="cumpleExpand(\'' + p.id + '\')"></div>'
+      : '<div class="cumple-avatar cumple-avatar-placeholder" onclick="cumpleExpand(\'' + p.id + '\')"><i data-lucide="user-round"></i></div>';
+    var expandAvatarHtml = p.photo
+      ? '<div class="cumple-expand-avatar" style="background-image:url(\'' + p.photo + '\')"></div>'
+      : '<div class="cumple-expand-avatar cumple-avatar-placeholder"><i data-lucide="user-round"></i></div>';
+
+    return (
+      '<div class="' + itemClass + '"' + delayAttr + '>' +
+        '<div class="cumple-pill">' +
+          pillAvatarHtml +
+          '<div class="cumple-info">' +
+            '<span class="cumple-name" data-full-name="' + p.name + '">' + p.name + '</span>' +
+            '<span class="cumple-sub">' + p.sector + '</span>' +
+            '<span class="cumple-pill-date">' + pillDateHtml + '</span>' +
+          '</div>' +
+          '<button type="button" class="cumple-greet-btn' + (greeted ? ' greeted' : '') + '"' + greetDisabled + ' data-greet-id="' + p.id + '" title="' + greetLabel + '" onclick="event.stopPropagation(); cumpleGreet(\'' + p.id + '\', this)"><i data-lucide="party-popper"></i><span class="action-label">' + greetLabel + '</span></button>' +
+          '<button type="button" class="cumple-plus-btn" title="' + (isExpanded ? 'Cerrar' : 'Ver más') + '" onclick="cumpleExpand(\'' + p.id + '\')"><i data-lucide="' + (isExpanded ? 'chevron-up' : 'plus') + '"></i></button>' +
+        '</div>' +
+        '<div class="cumple-item-extra">' +
+          '<div class="cumple-expand-header">' +
+            expandAvatarHtml +
+            '<div class="cumple-expand-info">' +
+              '<span class="cumple-expand-name">' + p.name + '</span>' +
+              '<span class="cumple-expand-role">' + p.role + '</span>' +
+              '<span class="cumple-area-pill">' + teamLabel + '</span>' +
+            '</div>' +
+            '<button type="button" class="cumple-plus-btn" title="Cerrar" onclick="cumpleExpand(\'' + p.id + '\')"><i data-lucide="chevron-up"></i></button>' +
+          '</div>' +
+          '<div class="cumple-expand-action-row">' +
+            '<div class="cumple-expand-corp">' +
+              '<div class="cumple-corp-row"><i data-lucide="map-pin"></i><span>' + p.location + '</span></div>' +
+              '<div class="cumple-corp-row"><i data-lucide="trophy"></i><span>' + p.years + ' años</span></div>' +
+            '</div>' +
+            '<div class="cumple-pill-divider"></div>' +
+            '<div class="cumple-expand-bottom-row">' +
+              '<div class="cumple-expand-date">' +
+                '<b>' + p.birthDate + '</b>' +
+                '<span' + (isToday ? ' class="cumple-pill-today"' : '') + '>' + statusText + '</span>' +
+              '</div>' +
+              '<button type="button" class="cumple-greet-btn' + (greeted ? ' greeted' : '') + '"' + greetDisabled + ' data-greet-id="' + p.id + '" title="' + greetLabel + '" onclick="event.stopPropagation(); cumpleGreet(\'' + p.id + '\', this)"><i data-lucide="party-popper"></i><span class="action-label">' + greetLabel + '</span></button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderCumpleWidget() {
+    var pager = document.getElementById('cumple-pager');
+    var listLayer = document.getElementById('cumple-list-layer');
+    if (!pager || !listLayer) return;
+
+    if (cumpleView === 'stack') {
+      cumpleSetCalendarBtnVisible(false);
+      renderCumpleStack(pager, listLayer);
+      return;
+    }
+
+    cumpleSetCalendarBtnVisible(true);
+    var listData = cumpleStackList();
+    var total = cumpleTotalPages();
+    if (cumpleExpandedId) {
+      pager.innerHTML = '';
+    } else if (listData.length > CUMPLE_PAGE_SIZE) {
+      pager.innerHTML =
+        '<button type="button" class="cumple-pager-btn" onclick="cumpleGoPage(-1)"' + (cumplePage === 0 ? ' disabled' : '') + '><i data-lucide="chevron-left"></i></button>' +
+        '<button type="button" class="cumple-pager-btn" onclick="cumpleGoPage(1)"' + (cumplePage === total - 1 ? ' disabled' : '') + '><i data-lucide="chevron-right"></i></button>';
+    } else {
+      pager.innerHTML = '';
+    }
+
+    var start = cumplePage * CUMPLE_PAGE_SIZE;
+    var pageItems = listData.slice(start, start + CUMPLE_PAGE_SIZE);
+    var slideClass = cumplePageDir < 0 ? 'cumple-slide-in-from-left' : 'cumple-slide-in-from-right';
+    listLayer.innerHTML = pageItems.map(function(p, i) { return cumpleCardHtml(p, i, slideClass); }).join('');
+
+    lucide.createIcons();
+    listLayer.querySelectorAll('.cumple-greet-btn').forEach(fitGreetBtnWidth);
+    cumpleFitNames(listLayer);
+  }
+
+  /* Widget de Efemérides */
+  var EFEMERIDES_DATA = [
+    { id: 'ef-bandera',      title: 'Día de la Bandera',      dateLabel: '20 de junio', photo: 'img/noticia18.png', description: 'Se recuerda a Manuel Belgrano y la creación de la bandera argentina en 1812, izada por primera vez a orillas del río Paraná.' },
+    { id: 'ef-trabajador',   title: 'Día del Trabajador',      dateLabel: '1 de mayo',   photo: 'img/noticia19.png', description: 'Se conmemora la lucha histórica de los trabajadores por la jornada de 8 horas y por mejores condiciones laborales en todo el mundo.' },
+    { id: 'ef-aniversario',  title: 'Aniversario de ECOM',     dateLabel: '15 de julio', photo: 'img/noticia16.png', description: 'Un nuevo aniversario de la fundación de la empresa, celebrando la trayectoria, los logros y al equipo que la hace posible cada día.' },
+    { id: 'ef-independencia', title: 'Día de la Independencia', dateLabel: '9 de julio',  photo: 'img/noticia14.jpg', description: 'Se conmemora la declaración de la independencia de las Provincias Unidas del Río de la Plata, proclamada en Tucumán en 1816.' },
+    { id: 'ef-amigo',        title: 'Día del Amigo',           dateLabel: '20 de julio', photo: 'img/noticia15.jpg', description: 'Una fecha para celebrar la amistad, con origen en la llegada del hombre a la Luna en 1969 y hoy celebrada en gran parte del mundo.' },
+    { id: 'ef-nino',         title: 'Día del Niño',            dateLabel: '17 de agosto', photo: 'img/noticia17.png', description: 'Se celebra a los más chicos de la familia ECOM, un día dedicado a sus derechos, su bienestar y su alegría.' }
+  ];
+  var EFEM_PAGE_SIZE = 2;
+  var efemPage = 0;
+  var efemPageDir = 1;
+
+  function efemTotalPages() {
+    return Math.max(1, Math.ceil(EFEMERIDES_DATA.length / EFEM_PAGE_SIZE));
+  }
+  function efemGoPage(delta) {
+    var total = efemTotalPages();
+    var next = Math.max(0, Math.min(total - 1, efemPage + delta));
+    if (next === efemPage) return;
+    efemPageDir = next > efemPage ? 1 : -1;
+    efemPage = next;
+    renderEfemeridesWidget();
+  }
+  function renderEfemeridesWidget() {
+    var pager = document.getElementById('efem-pager');
+    var list = document.getElementById('efem-list');
+    if (!pager || !list) return;
+    var total = efemTotalPages();
+    pager.innerHTML = EFEMERIDES_DATA.length > EFEM_PAGE_SIZE
+      ? '<button type="button" class="cumple-pager-btn" onclick="efemGoPage(-1)"' + (efemPage === 0 ? ' disabled' : '') + '><i data-lucide="chevron-left"></i></button>' +
+        '<button type="button" class="cumple-pager-btn" onclick="efemGoPage(1)"' + (efemPage === total - 1 ? ' disabled' : '') + '><i data-lucide="chevron-right"></i></button>'
+      : '';
+    var start = efemPage * EFEM_PAGE_SIZE;
+    var pageItems = EFEMERIDES_DATA.slice(start, start + EFEM_PAGE_SIZE);
+    var slideClass = efemPageDir < 0 ? 'cumple-slide-in-from-left' : 'cumple-slide-in-from-right';
+    list.innerHTML = pageItems.map(function(e, i) {
+      var delayAttr = ' style="animation-delay:' + (i * 90) + 'ms"';
+      return (
+        '<div class="efem-item ' + slideClass + '"' + delayAttr + ' onclick="efemOpenModal(\'' + e.id + '\')">' +
+          '<div class="efem-photo" style="background-image:url(\'' + e.photo + '\')"></div>' +
+          '<div class="efem-info">' +
+            '<span class="efem-title">' + e.title + '</span>' +
+            '<span class="efem-date">' + e.dateLabel + '</span>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+    lucide.createIcons();
+  }
+
+  function efemOpenModal(id) {
+    var e = EFEMERIDES_DATA.filter(function(x) { return x.id === id; })[0];
+    var modal = document.getElementById('efem-modal');
+    if (!e || !modal) return;
+    document.getElementById('efem-modal-photo').style.backgroundImage = "url('" + e.photo + "')";
+    document.getElementById('efem-modal-date').textContent = e.dateLabel;
+    document.getElementById('efem-modal-title').textContent = e.title;
+    document.getElementById('efem-modal-desc').textContent = e.description;
+    modal.style.display = 'flex';
+  }
+  function efemCloseModal() {
+    var modal = document.getElementById('efem-modal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function newsAuthorInitials(name) {
+    var parts = name.trim().split(/\s+/);
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+  }
+
+  function getFeaturedIds() {
+    return NEWS_ORDER.filter(function(id) {
+      return NEWS_DATA[id].tag === newsFilter;
+    });
+  }
+  function getOtherIds() {
+    var featured = getFeaturedIds();
+    return NEWS_ORDER.filter(function(id) { return featured.indexOf(id) === -1; });
+  }
+
+  function setNewsFilter(tag) {
+    newsFilter = tag;
+    renderNewsMix();
+    saveViewState();
+  }
+
+  function renderNewsMix() {
+    var featuredIds = getFeaturedIds();
+    var otherIds = getOtherIds();
+
+    var featuredHtml = featuredIds.map(function(id) {
+      var d = NEWS_DATA[id];
+      var liked = !!newsLikedState[id];
+      return (
+        '<article class="bento-card news-main-box news-reveal-pending">' +
+          '<div class="news-main-img" onclick="abrirNoticiaCompleta(\'' + id + '\')">' +
+            '<div class="news-main-bg" style="background-image:url(\'' + d.img + '\')"></div>' +
+            '<div class="news-main-actions">' +
+              '<button type="button" class="news-action-btn like-btn' + (liked ? ' liked' : '') + '" data-like-id="' + id + '" onclick="event.stopPropagation(); toggleNewsLike(\'' + id + '\', this)">' +
+                '<i data-lucide="heart"></i><span class="action-label">Me gusta</span>' +
+              '</button>' +
+              '<button type="button" class="news-action-btn share-btn" onclick="event.stopPropagation(); shareNews(\'' + id + '\')">' +
+                '<i data-lucide="share-2"></i><span class="action-label">Compartir</span>' +
+              '</button>' +
+              '<button type="button" class="news-action-btn copy-btn" onclick="event.stopPropagation(); copyNewsLink(\'' + id + '\', this)">' +
+                '<i data-lucide="link"></i><span class="action-label">Copiar link</span>' +
+              '</button>' +
+            '</div>' +
+            '<div class="news-main-panel">' +
+              '<span class="news-tag">' + d.tag + '</span>' +
+              '<h3 class="news-headline">' + d.title + '</h3>' +
+              '<p class="news-deck">' + d.deck + '</p>' +
+              '<div class="news-main-byline">' +
+                '<span class="news-author-avatar">' + newsAuthorInitials(d.author) + '</span>' +
+                '<span class="news-byline-text">' + d.author + ' &middot; ' + d.date + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<button type="button" class="news-action-btn news-main-arrow" title="Leer más" onclick="event.stopPropagation(); abrirNoticiaCompleta(\'' + id + '\')"><i data-lucide="arrow-up-right"></i><span class="action-label">Leer más</span></button>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join('');
+
+    var secondaryHtml = otherIds.map(function(id) {
+      var d = NEWS_DATA[id];
+      var likeCount = d.likesBase + (newsLikedState[id] ? 1 : 0);
+      return (
+        '<article class="bento-card news-sub-box news-reveal-pending" onclick="abrirNoticiaCompleta(\'' + id + '\')">' +
+          '<div class="sub-news-thumb">' +
+            '<div class="sub-news-bg" style="background-image:url(\'' + d.img + '\')"></div>' +
+          '</div>' +
+          '<div class="sub-news-panel">' +
+            '<div class="sub-news-meta">' +
+              '<span class="news-tag">' + d.tag + '</span>' +
+            '</div>' +
+            '<div class="sub-news-title">' + d.title + '</div>' +
+            '<p class="sub-news-deck">' + d.deck + '</p>' +
+            '<div class="sub-news-bottom-row">' +
+              '<div class="sub-news-stats">' +
+                '<button type="button" class="sub-news-like-btn' + (newsLikedState[id] ? ' liked' : '') + '" data-like-id="' + id + '" onclick="event.stopPropagation(); toggleNewsLike(\'' + id + '\', this)"><i data-lucide="heart"></i><span data-like-count-num="' + id + '">' + likeCount + '</span></button>' +
+              '</div>' +
+              '<button type="button" class="news-action-btn sub-news-arrow" title="Leer más" onclick="event.stopPropagation(); abrirNoticiaCompleta(\'' + id + '\')"><i data-lucide="arrow-up-right"></i><span class="action-label">Leer más</span></button>' +
+            '</div>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join('');
+
+    var filterHtml =
+      '<select class="news-filter-select" onchange="setNewsFilter(this.value)">' +
+        NEWS_FILTERS.map(function(tag) {
+          return '<option value="' + tag + '"' + (newsFilter === tag ? ' selected' : '') + '>' + tag + '</option>';
+        }).join('') +
+      '</select>' +
+      NEWS_FILTERS.map(function(tag) {
+        return '<button type="button" class="filter-chip' + (newsFilter === tag ? ' active' : '') + '" onclick="setNewsFilter(\'' + tag + '\')">' + tag + '</button>';
+      }).join('');
+
+    document.getElementById('news-featured-list').innerHTML = featuredHtml || '<div class="news-empty-msg">No hay noticias para este filtro.</div>';
+    document.getElementById('news-secondary-column').innerHTML = secondaryHtml || '<div class="news-empty-msg">No hay más noticias.</div>';
+    document.getElementById('news-filter').innerHTML = filterHtml;
+    lucide.createIcons();
+    document.querySelectorAll('#news-featured-list .news-action-btn, #news-secondary-column .news-action-btn').forEach(fitActionBtnWidth);
+    setupNewsRevealObserver(document.getElementById('news-featured-list'));
+    setupNewsRevealObserver(document.getElementById('news-secondary-column'));
+  }
+
+  function setupNewsRevealObserver(containerEl) {
+    if (!containerEl) return;
+    var pending = containerEl.querySelectorAll('.news-reveal-pending');
+    if (!pending.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      pending.forEach(function(el) { el.classList.add('news-revealed'); });
+      return;
+    }
+
+    var staggerIndex = 0;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        el.style.transitionDelay = Math.min(staggerIndex, 6) * 70 + 'ms';
+        staggerIndex++;
+        el.classList.add('news-revealed');
+        observer.unobserve(el);
+        clearTimeout(containerEl._newsStaggerResetTimer);
+        containerEl._newsStaggerResetTimer = setTimeout(function() { staggerIndex = 0; }, 200);
+      });
+    }, { root: containerEl, threshold: 0 });
+
+    pending.forEach(function(el) { observer.observe(el); });
+  }
+
+  function fitActionBtnWidth(btn) {
+    var label = btn.querySelector('.action-label');
+    if (!label) return;
+    var isMainAction = !!btn.closest('.news-main-actions');
+    var ICON_W = 13, PAD_L = 8.5, MARGIN = 6, PAD_R = isMainAction ? 8.5 : 12, BORDERS = 2;
+    var w = ICON_W + PAD_L + MARGIN + label.scrollWidth + PAD_R + BORDERS;
+    btn.style.setProperty('--expand-width', w + 'px');
+  }
+
+  function fitGreetBtnWidth(btn) {
+    var label = btn.querySelector('.action-label');
+    if (!label) return;
+    var ICON_W = 15, PAD_L = 10, MARGIN = 6, PAD_R = 10, BORDERS = 2, SAFETY = 2;
+    var w = ICON_W + PAD_L + MARGIN + label.scrollWidth + PAD_R + BORDERS + SAFETY;
+    btn.style.setProperty('--expand-width', w + 'px');
+  }
+
+  function fitAppsHeaderBtnWidth(btn) {
+    var label = btn.querySelector('.action-label');
+    if (!label) return;
+    var ICON_W = 13, PAD_L = 6, MARGIN = 6, PAD_R = 10, BORDERS = 2, SAFETY = 2;
+    var w = ICON_W + PAD_L + MARGIN + label.scrollWidth + PAD_R + BORDERS + SAFETY;
+    btn.style.setProperty('--expand-width', w + 'px');
+  }
+
+  function saveLikedNewsState() {
+    try { sessionStorage.setItem('miecom_likedNews', JSON.stringify(newsLikedState)); } catch (e) {}
+  }
+
+  function toggleNewsLike(newsId, btn) {
+    newsLikedState[newsId] = !newsLikedState[newsId];
+    saveLikedNewsState();
+    var liked = !!newsLikedState[newsId];
+    var count = NEWS_DATA[newsId].likesBase + (liked ? 1 : 0);
+
+    document.querySelectorAll('[data-like-id="' + newsId + '"]').forEach(function(b) {
+      b.classList.toggle('liked', liked);
+    });
+    var countEl = document.querySelector('[data-like-count-num="' + newsId + '"]');
+    if (countEl) countEl.textContent = count;
+
+    if (liked) {
+      var plusOne = document.createElement('span');
+      plusOne.className = 'like-plus-one';
+      plusOne.textContent = '+1';
+      btn.appendChild(plusOne);
+      setTimeout(function() { plusOne.remove(); }, 700);
+    }
+
+    var label = btn.querySelector('.action-label');
+    if (label) {
+      label.textContent = count + ' Me gusta';
+      fitActionBtnWidth(btn);
+      btn.classList.add('force-open');
+      clearTimeout(btn._closeTimer);
+      btn._closeTimer = setTimeout(function() {
+        btn.classList.remove('force-open');
+        setTimeout(function() {
+          label.textContent = 'Me gusta';
+          fitActionBtnWidth(btn);
+        }, 480);
+      }, 1000);
+    }
+  }
+
+  function shareNews(newsId) {
+    var data = NEWS_DATA[newsId];
+    if (navigator.share) {
+      navigator.share({ title: data.title, text: data.deck }).catch(function() {});
+    }
+  }
+
+  function copyNewsLink(newsId, btn) {
+    var url = location.href.split('#')[0] + '#' + newsId;
+    if (navigator.clipboard) navigator.clipboard.writeText(url).catch(function() {});
+    var label = btn.querySelector('.action-label');
+    if (label) {
+      var original = label.textContent;
+      label.textContent = 'Copiado';
+      fitActionBtnWidth(btn);
+      btn.classList.add('force-open');
+      clearTimeout(btn._closeTimer);
+      btn._closeTimer = setTimeout(function() {
+        btn.classList.remove('force-open');
+        label.textContent = original;
+        fitActionBtnWidth(btn);
+      }, 1200);
+    }
+  }
+
+  var restoringFromHistory = false;
+  var lastHash = '';
+
+  function buildViewState() {
+    var reader = document.getElementById('article-reader');
+    var openArticle = (reader && reader.style.display === 'flex' && reader.dataset.currentNews)
+      ? reader.dataset.currentNews : null;
+    var activeIco = document.querySelector('.icon-sidebar .ico-pill .ico.active');
+    var section = activeIco ? activeIco.dataset.tooltip : 'Inicio';
+    return { section: section, openArticle: openArticle, filter: newsFilter };
+  }
+
+  function encodeHash(state) {
+    var parts = ['s=' + encodeURIComponent(state.section || 'Inicio')];
+    if (state.openArticle) parts.push('a=' + encodeURIComponent(state.openArticle));
+    parts.push('f=' + encodeURIComponent(state.filter || NEWS_FILTERS[0]));
+    return '#' + parts.join('&');
+  }
+
+  function decodeHash(hash) {
+    var out = { section: 'Inicio', openArticle: null, filter: NEWS_FILTERS[0] };
+    var raw = (hash || '').replace(/^#/, '');
+    if (!raw) return out;
+    raw.split('&').forEach(function(pair) {
+      var kv = pair.split('=');
+      var key = kv[0], val = decodeURIComponent(kv[1] || '');
+      if (key === 's' && val) out.section = val;
+      if (key === 'a' && val) out.openArticle = val;
+      if (key === 'f' && val) out.filter = val;
+    });
+    return out;
+  }
+
+  function saveViewState() {
+    try {
+      var state = buildViewState();
+      sessionStorage.setItem('miecom_newsFilter', state.filter);
+      if (state.openArticle) {
+        sessionStorage.setItem('miecom_openArticle', state.openArticle);
+      } else {
+        sessionStorage.removeItem('miecom_openArticle');
+      }
+      sessionStorage.setItem('miecom_activeSection', state.section);
+
+      if (!restoringFromHistory) {
+        var hash = encodeHash(state);
+        if (hash !== lastHash) {
+          lastHash = hash;
+          location.hash = hash;
+        }
+      }
+    } catch (e) {}
+  }
+
+  function setSidebarIco(tooltip) {
+    document.querySelectorAll('.icon-sidebar .ico-pill .ico').forEach(function(ico) {
+      ico.classList.toggle('active', ico.dataset.tooltip === tooltip);
+    });
+  }
+
+  function setThemeMode(mode) {
+    var toggle = document.getElementById('theme-toggle');
+    var light = document.getElementById('theme-opt-light');
+    var dark = document.getElementById('theme-opt-dark');
+    var currentMode = (light && light.classList.contains('active')) ? 'light' : 'dark';
+    if (mode === currentMode) mode = (mode === 'light') ? 'dark' : 'light';
+    if (light) light.classList.toggle('active', mode === 'light');
+    if (dark) dark.classList.toggle('active', mode === 'dark');
+    if (toggle) toggle.classList.toggle('dark', mode === 'dark');
+  }
+
+  function showSection(tooltip) {
+    var grid = document.getElementById('center-default-grid');
+    var placeholder = document.getElementById('placeholder-view');
+
+    if (tooltip === 'Inicio') {
+      cerrarNoticia();
+      grid.style.display = 'flex';
+      placeholder.style.display = 'none';
+      setSidebarIco('Inicio');
+    } else if (tooltip === 'Aplicaciones') {
+      cerrarNoticia();
+      grid.style.display = 'flex';
+      placeholder.style.display = 'none';
+      setSidebarIco('Aplicaciones');
+      var widget = document.querySelector('.apps-widget');
+      if (widget) widget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else if (tooltip === 'Noticias') {
+      grid.style.display = 'flex';
+      placeholder.style.display = 'none';
+      var reader = document.getElementById('article-reader');
+      if (reader.style.display !== 'flex') {
+        var featured = getFeaturedIds();
+        abrirNoticiaCompleta(featured[0] || NEWS_ORDER[0]);
+      } else {
+        setSidebarIco('Noticias');
+      }
+    } else {
+      cerrarNoticia();
+      grid.style.display = 'none';
+      placeholder.style.display = 'flex';
+      placeholder.querySelector('.placeholder-title').textContent = tooltip;
+      setSidebarIco(tooltip);
+    }
+    saveViewState();
+  }
+
+  function abrirNoticiaCompleta(newsId) {
+    var data = NEWS_DATA[newsId];
+    if (!data) return;
+
+    document.getElementById('widgets-panel').style.display = 'none';
+    document.getElementById('news-featured-col').style.display = 'none';
+    var reader = document.getElementById('article-reader');
+    reader.style.display = 'flex';
+
+    var content = document.getElementById('article-reader-content');
+    var html =
+      '<div class="article-reader-hero" style="background-image:url(\'' + data.img + '\')"></div>' +
+      '<div class="article-reader-top">' +
+        '<span class="news-tag">' + data.tag + '</span>' +
+        '<div class="article-reader-actions">' +
+          '<button type="button" class="news-action-btn like-btn' + (newsLikedState[newsId] ? ' liked' : '') + '" data-like-id="' + newsId + '" onclick="toggleNewsLike(\'' + newsId + '\', this)"><i data-lucide="heart"></i><span class="action-label">Me gusta</span></button>' +
+          '<button type="button" class="news-action-btn share-btn" onclick="shareNews(\'' + newsId + '\')"><i data-lucide="share-2"></i><span class="action-label">Compartir</span></button>' +
+          '<button type="button" class="news-action-btn copy-btn" onclick="copyNewsLink(\'' + newsId + '\', this)"><i data-lucide="link"></i><span class="action-label">Copiar link</span></button>' +
+        '</div>' +
+      '</div>' +
+      '<h1 class="article-reader-title">' + data.title + '</h1>' +
+      '<div class="article-reader-byline">Por <b>' + data.author + '</b> · ' + data.date + '</div>' +
+      '<p class="article-reader-deck">' + data.deck + '</p>' +
+      '<div class="article-reader-body">' +
+        data.body.map(function(p) { return '<p>' + p + '</p>'; }).join('') +
+      '</div>';
+    content.innerHTML = html;
+    lucide.createIcons();
+    content.querySelectorAll('.news-action-btn').forEach(fitActionBtnWidth);
+    document.querySelectorAll('#back-to-grid-btn').forEach(fitActionBtnWidth);
+
+    reader.scrollTop = 0;
+    reader.dataset.currentNews = newsId;
+    document.body.classList.add('reading-news');
+    setSidebarIco('Noticias');
+    saveViewState();
+  }
+
+  function cerrarNoticia() {
+    document.getElementById('article-reader').style.display = 'none';
+    document.getElementById('widgets-panel').style.display = '';
+    document.getElementById('news-featured-col').style.display = '';
+    document.body.classList.remove('reading-news');
+    setSidebarIco('Inicio');
+    saveViewState();
+  }
+
+  window.addEventListener('hashchange', function() {
+    if (location.hash === lastHash) return;
+    lastHash = location.hash;
+    restoringFromHistory = true;
+    try {
+      var state = decodeHash(location.hash);
+      newsFilter = (NEWS_FILTERS.indexOf(state.filter) !== -1) ? state.filter : NEWS_FILTERS[0];
+      renderNewsMix();
+      if (state.openArticle && NEWS_DATA[state.openArticle]) {
+        abrirNoticiaCompleta(state.openArticle);
+      } else {
+        cerrarNoticia();
+        showSection(state.section || 'Inicio');
+      }
+    } finally {
+      restoringFromHistory = false;
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+
+    var restoredOpenArticle = null;
+    var restoredSection = null;
+    if (location.hash) {
+      var hashState = decodeHash(location.hash);
+      lastHash = location.hash;
+      if (NEWS_FILTERS.indexOf(hashState.filter) !== -1) newsFilter = hashState.filter;
+      if (hashState.openArticle && NEWS_DATA[hashState.openArticle]) restoredOpenArticle = hashState.openArticle;
+      restoredSection = hashState.section;
+    } else {
+      try {
+        var savedFilter = sessionStorage.getItem('miecom_newsFilter');
+        if (savedFilter && NEWS_FILTERS.indexOf(savedFilter) !== -1) newsFilter = savedFilter;
+        var savedOpen = sessionStorage.getItem('miecom_openArticle');
+        if (savedOpen && NEWS_DATA[savedOpen]) restoredOpenArticle = savedOpen;
+        restoredSection = sessionStorage.getItem('miecom_activeSection');
+      } catch (e) {}
+    }
+
+    try {
+      var savedLiked = sessionStorage.getItem('miecom_likedNews');
+      if (savedLiked) newsLikedState = JSON.parse(savedLiked);
+    } catch (e) {}
+
+    renderNewsMix();
+    cumpleInitDatePicker();
+    renderCumpleWidget();
+    renderEfemeridesWidget();
+    renderAppsGrid();
+    if (restoredOpenArticle) {
+      abrirNoticiaCompleta(restoredOpenArticle);
+    } else if (restoredSection) {
+      showSection(restoredSection);
+    }
+    document.querySelectorAll('.prof-btn').forEach(fitActionBtnWidth);
+    document.querySelectorAll('.apps-header-btn, .memos-arrow-btn').forEach(fitAppsHeaderBtnWidth);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function() {
+        document.querySelectorAll('.news-action-btn, .prof-btn').forEach(fitActionBtnWidth);
+        document.querySelectorAll('.apps-header-btn, .memos-arrow-btn').forEach(fitAppsHeaderBtnWidth);
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key !== 'Escape') return;
+      var modal = document.getElementById('efem-modal');
+      if (modal && modal.style.display !== 'none') efemCloseModal();
+    });
+
+    document.querySelectorAll('.ico-pill .ico').forEach(function(ico) {
+      ico.addEventListener('click', function() {
+        var el = this;
+        el.classList.remove('ico-pressed');
+        void el.offsetWidth;
+        el.classList.add('ico-pressed');
+        el.addEventListener('animationend', function() {
+          el.classList.remove('ico-pressed');
+        }, { once: true });
+        if (el.dataset.tooltip) showSection(el.dataset.tooltip);
+      });
+    });
+
+    var tutorialTrigger = document.getElementById('tutorial-trigger');
+    if (tutorialTrigger) {
+      tutorialTrigger.addEventListener('click', function() {
+        var el = this;
+        el.classList.remove('ico-pressed');
+        void el.offsetWidth;
+        el.classList.add('ico-pressed');
+        el.addEventListener('animationend', function() {
+          el.classList.remove('ico-pressed');
+        }, { once: true });
+        tutorialStart();
+      });
+    }
+
+    var imgs = document.querySelectorAll('#novedades-slider .novedad-img');
+    var fill = document.getElementById('novedad-fill');
+    var memoStack = document.getElementById('memos-stack');
+    if (memoStack) {
+      Array.from(memoStack.querySelectorAll('.memo-item')).forEach(function(item) {
+        if (item.querySelector('.memo-status.visto')) memoStack.appendChild(item);
+      });
+    }
+
+    function expandMemo(item) {
+      if (item.classList.contains('expanded')) return;
+      var stack = item.parentElement;
+      var startH = item.getBoundingClientRect().height;
+      item.dataset.collapsedHeight = startH;
+      item.style.height = startH + 'px';
+      item.classList.add('expanded');
+      if (stack) stack.classList.add('has-expanded');
+      void item.offsetWidth;
+      item.style.height = item.scrollHeight + 'px';
+      item.addEventListener('transitionend', function te(e) {
+        if (e.propertyName !== 'height') return;
+        item.removeEventListener('transitionend', te);
+        if (item.classList.contains('expanded')) item.style.height = 'auto';
+      });
+    }
+
+    function collapseMemo(item) {
+      if (!item.classList.contains('expanded')) return;
+      var stack = item.parentElement;
+      var startH = item.getBoundingClientRect().height;
+      item.style.height = startH + 'px';
+      void item.offsetWidth;
+      item.classList.remove('expanded');
+      if (stack && !stack.querySelector('.memo-item.expanded')) stack.classList.remove('has-expanded');
+      item.style.height = (item.dataset.collapsedHeight || startH) + 'px';
+      item.addEventListener('transitionend', function te(e) {
+        if (e.propertyName !== 'height') return;
+        item.removeEventListener('transitionend', te);
+        item.style.height = '';
+        if (item.dataset.pendingReorder === '1') {
+          delete item.dataset.pendingReorder;
+          item.parentElement.appendChild(item);
+        }
+      });
+    }
+
+    document.querySelectorAll('#memos-stack .memo-item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        if (e.target.closest('.memo-close-btn')) return;
+        var badge = item.querySelector('.memo-status');
+        if (badge && badge.classList.contains('nuevo')) {
+          badge.classList.remove('nuevo');
+          badge.classList.add('visto');
+          badge.textContent = 'Visto';
+          item.dataset.pendingReorder = '1';
+        }
+        if (item.classList.contains('expanded')) {
+          collapseMemo(item);
+        } else {
+          document.querySelectorAll('#memos-stack .memo-item.expanded').forEach(function(other) {
+            if (other !== item) collapseMemo(other);
+          });
+          expandMemo(item);
+        }
+      });
+
+      var closeBtn = item.querySelector('.memo-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          collapseMemo(item);
+        });
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#memos-stack')) return;
+      document.querySelectorAll('#memos-stack .memo-item.expanded').forEach(function(item) {
+        collapseMemo(item);
+      });
+    });
+
+    var nImgs = Array.from(document.querySelectorAll('#novedades-slider .novedad-img'));
+    var nFill = document.getElementById('novedad-fill');
+    var nSlider = document.getElementById('novedades-slider');
+    var nPopup = document.getElementById('novedad-popup');
+    var nCurrent = 0;
+    var NDUR = 5000;
+    var nPausedAt = null;
+    var nAnimId = null;
+    var nTimer = null;
+    var nPopupCurrent = 0;
+
+    function buildThumbRow(containerId, onJump) {
+      var container = document.getElementById(containerId);
+      var viewport = container ? container.querySelector('.novedades-thumbs-viewport') : null;
+      var track = viewport ? viewport.querySelector('.novedades-thumbs-track') : null;
+      if (!container || !viewport || !track) return { init: function() {}, update: function() {} };
+
+      var current = 0;
+      var animating = false;
+      var TDUR = 380;
+
+      function lockViewportWidth() {
+        var first = track.children[0];
+        if (!first) return;
+        var gap = parseFloat(getComputedStyle(track).gap) || 0;
+        var w = first.getBoundingClientRect().width;
+        viewport.style.width = (w * 3 + gap * 2) + 'px';
+      }
+
+      function makeThumb(idx) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'novedad-thumb';
+        btn.dataset.realIndex = idx;
+        var img = document.createElement('img');
+        img.src = nImgs[idx].src;
+        img.alt = '';
+        btn.appendChild(img);
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (animating || idx === current) return;
+          onJump(idx);
+        });
+        return btn;
+      }
+
+      function markActive() {
+        Array.from(track.children).forEach(function(btn) {
+          btn.classList.toggle('active', parseInt(btn.dataset.realIndex, 10) === current);
+        });
+      }
+
+      function init(cur) {
+        current = cur;
+        var n = nImgs.length;
+        track.innerHTML = '';
+        viewport.style.width = '';
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        [-1, 0, 1].forEach(function(off) {
+          track.appendChild(makeThumb((cur + off + n) % n));
+        });
+        markActive();
+        lockViewportWidth();
+      }
+
+      function getStep() {
+        var first = track.children[0];
+        if (!first) return 0;
+        var gap = parseFloat(getComputedStyle(track).gap) || 0;
+        return first.getBoundingClientRect().width + gap;
+      }
+
+      function update(targetCur) {
+        var n = nImgs.length;
+        if (targetCur === current || !track.children.length) { init(targetCur); return; }
+        var dir = ((targetCur - current + n) % n === 1) ? 1 : -1;
+        var step = getStep();
+        animating = true;
+        current = targetCur;
+
+        if (dir > 0) {
+          track.appendChild(makeThumb((targetCur + 1) % n));
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+          void track.offsetWidth;
+          track.style.transition = 'transform ' + TDUR + 'ms cubic-bezier(0.4,0,0.2,1)';
+          track.style.transform = 'translateX(-' + step + 'px)';
+        } else {
+          track.insertBefore(makeThumb((targetCur - 1 + n) % n), track.firstChild);
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(-' + step + 'px)';
+          void track.offsetWidth;
+          track.style.transition = 'transform ' + TDUR + 'ms cubic-bezier(0.4,0,0.2,1)';
+          track.style.transform = 'translateX(0)';
+        }
+
+        track.addEventListener('transitionend', function te(e) {
+          if (e.propertyName !== 'transform') return;
+          track.removeEventListener('transitionend', te);
+          track.removeChild(dir > 0 ? track.firstChild : track.lastChild);
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+          markActive();
+          animating = false;
+        });
+      }
+
+      return { init: init, update: update, resize: lockViewportWidth };
+    }
+
+    var pImgA = document.getElementById('popup-img-a');
+    var pImgB = document.getElementById('popup-img-b');
+    var pActiveSlot = 'a';
+    var pAnimating = false;
+
+    function nSetFill(pct) { if (nFill) nFill.style.width = pct + '%'; }
+
+    function nStart() {
+      nSetFill(0); nPausedAt = null;
+      if (nAnimId) cancelAnimationFrame(nAnimId);
+      if (nTimer) clearTimeout(nTimer);
+      var t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var pct = Math.min((ts - t0) / NDUR * 100, 100);
+        nSetFill(pct);
+        if (pct < 100) nAnimId = requestAnimationFrame(step);
+      }
+      nAnimId = requestAnimationFrame(step);
+      nTimer = setTimeout(nGoNext, NDUR);
+    }
+
+    function nPause() {
+      if (nPausedAt !== null) return;
+      nPausedAt = parseFloat(nFill ? nFill.style.width : '0') || 0;
+      if (nAnimId) { cancelAnimationFrame(nAnimId); nAnimId = null; }
+      if (nTimer) { clearTimeout(nTimer); nTimer = null; }
+    }
+
+    function nResume() {
+      if (nPausedAt === null) return;
+      var from = nPausedAt, rem = NDUR * (1 - from / 100);
+      nPausedAt = null;
+      var t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        nSetFill(from + Math.min((ts - t0) / rem, 1) * (100 - from));
+        if (ts - t0 < rem) nAnimId = requestAnimationFrame(step);
+      }
+      nAnimId = requestAnimationFrame(step);
+      nTimer = setTimeout(nGoNext, rem);
+    }
+
+    function nGoTo(targetIdx) {
+      if (targetIdx === nCurrent) { nStart(); return; }
+      var leaving = nImgs[nCurrent];
+      leaving.classList.remove('active');
+      leaving.classList.add('leaving');
+      nCurrent = targetIdx;
+      nImgs[nCurrent].classList.add('active');
+      setTimeout(function() { leaving.classList.remove('leaving'); }, 520);
+      mainThumbs.update(nCurrent);
+      nStart();
+    }
+
+    function nGoNext() {
+      nGoTo((nCurrent + 1) % nImgs.length);
+    }
+
+    function pGetActive() { return pActiveSlot === 'a' ? pImgA : pImgB; }
+    function pGetStaging() { return pActiveSlot === 'a' ? pImgB : pImgA; }
+
+    var PDUR = 420;
+
+    function pSlide(dir, newIdx) {
+      if (pAnimating) return;
+      pAnimating = true;
+      var active = pGetActive();
+      var staging = pGetStaging();
+
+      staging.src = nImgs[newIdx].src;
+      var inFrom = dir > 0 ? '100%' : '-100%';
+      var outTo  = dir > 0 ? '-100%' : '100%';
+
+      staging.style.transition = 'none';
+      active.style.transition = 'none';
+      staging.style.transform = 'translateX(' + inFrom + ')';
+
+      void staging.offsetWidth;
+      var trans = 'transform ' + PDUR + 'ms cubic-bezier(0.4,0,0.2,1)';
+      staging.style.transition = trans;
+      active.style.transition = trans;
+      staging.style.transform = 'translateX(0)';
+      active.style.transform = 'translateX(' + outTo + ')';
+
+      setTimeout(function() {
+        active.style.transition = 'none';
+        active.style.transform = 'translateX(100%)';
+        pActiveSlot = pActiveSlot === 'a' ? 'b' : 'a';
+        nPopupCurrent = newIdx;
+        popupThumbs.update(nPopupCurrent);
+        pAnimating = false;
+      }, PDUR + 20);
+    }
+
+    function nOpenPopup() {
+      nPopupCurrent = nCurrent;
+      pActiveSlot = 'a';
+      pImgA.style.transition = 'none';
+      pImgB.style.transition = 'none';
+      pImgA.src = nImgs[nPopupCurrent].src;
+      pImgA.style.transform = 'translateX(0)';
+      pImgB.style.transform = 'translateX(100%)';
+      pAnimating = false;
+      nPopup.style.display = 'flex';
+      popupThumbs.init(nPopupCurrent);
+      nPause();
+    }
+
+    function nClosePopup() { nPopup.style.display = 'none'; nResume(); }
+
+    function nPopupNav(dir) {
+      var newIdx = (nPopupCurrent + dir + nImgs.length) % nImgs.length;
+      pSlide(dir, newIdx);
+    }
+
+    function nPopupGoTo(idx) {
+      if (idx === nPopupCurrent || pAnimating) return;
+      var n = nImgs.length;
+      var diff = (idx - nPopupCurrent + n) % n;
+      var dir = diff <= n / 2 ? 1 : -1;
+      pSlide(dir, idx);
+    }
+
+    var mainThumbs = buildThumbRow('novedades-thumbs', nGoTo);
+    var popupThumbs = buildThumbRow('novedades-thumbs-popup', nPopupGoTo);
+    mainThumbs.init(nCurrent);
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        mainThumbs.resize();
+        popupThumbs.resize();
+      }, 150);
+    });
+
+    if (nSlider) {
+      nSlider.addEventListener('mouseenter', nPause);
+      nSlider.addEventListener('mouseleave', nResume);
+      nSlider.addEventListener('click', nOpenPopup);
+    }
+    document.getElementById('novedad-popup-bg').addEventListener('click', nClosePopup);
+    document.getElementById('novedad-prev').addEventListener('click', function(e) { e.stopPropagation(); nPopupNav(-1); });
+    document.getElementById('novedad-next').addEventListener('click', function(e) { e.stopPropagation(); nPopupNav(1); });
+
+    if (nImgs.length > 1) nStart();
+  });
+
+  /* Tutorial guiado */
+  var TUTORIAL_STEPS = [
+    { selector: '.icon-sidebar', title: 'Barra lateral', text: 'Desde acá navegás entre las secciones principales: Inicio, Noticias, Descuentos, Contacto y Accesibilidad.' },
+    { selector: '.profile-card', title: 'Perfil', text: 'Tu foto, tu nombre y tu cargo. Con los botones de abajo podés editar tu perfil o tu foto.' },
+    { selector: '.memos-card', title: 'Memos', text: 'Comunicados internos importantes. Los nuevos quedan marcados hasta que los abras.' },
+    { selector: '.apps-widget', title: 'Aplicaciones / Enlaces', text: 'Accesos rápidos a las apps que usás todos los días, y tus propios enlaces guardados en la otra pestaña.' },
+    { selector: '.cumple-widget', title: 'Cumpleaños', text: 'Los cumpleaños de la semana. Tocá una persona para ver su detalle y mandarle un saludo.' },
+    { selector: '.efemerides-widget', title: 'Efemérides', text: 'Fechas importantes del calendario y de la empresa.' },
+    { selector: '.news-panel', title: 'Noticias', text: 'Las noticias destacadas y el resto de las novedades institucionales, filtradas por categoría.' },
+    { selector: '.novedades-card', title: 'Novedades', text: 'Anuncios y actualizaciones destacadas de la plataforma.' },
+    { selector: '.icon-sidebar .ico[data-tooltip="Salir"]', title: 'Cerrar sesión', text: 'Desde acá salís de tu cuenta de forma segura.' }
+  ];
+  var tutorialIndex = 0;
+  var tutorialActive = false;
+
+  function tutorialMaybeStart() {
+    try {
+      if (localStorage.getItem('miecom_tutorial_seen')) return;
+    } catch (e) {}
+    tutorialStart();
+  }
+
+  function tutorialStart() {
+    tutorialIndex = 0;
+    tutorialActive = true;
+    document.getElementById('tutorial-overlay').style.display = 'block';
+    tutorialRenderStep();
+    window.addEventListener('resize', tutorialRenderStep);
+  }
+
+  function tutorialEnd() {
+    tutorialActive = false;
+    document.getElementById('tutorial-overlay').style.display = 'none';
+    window.removeEventListener('resize', tutorialRenderStep);
+    try { localStorage.setItem('miecom_tutorial_seen', '1'); } catch (e) {}
+  }
+
+  function tutorialNext() {
+    if (tutorialIndex >= TUTORIAL_STEPS.length - 1) { tutorialEnd(); return; }
+    tutorialIndex++;
+    tutorialRenderStep();
+  }
+
+  function tutorialPrev() {
+    if (tutorialIndex <= 0) return;
+    tutorialIndex--;
+    tutorialRenderStep();
+  }
+
+  function tutorialRenderStep() {
+    if (!tutorialActive) return;
+    var step = TUTORIAL_STEPS[tutorialIndex];
+    var target = document.querySelector(step.selector);
+    if (!target) { tutorialNext(); return; }
+
+    var rect = target.getBoundingClientRect();
+    var pad = 6;
+    var spotlight = document.getElementById('tutorial-spotlight');
+    spotlight.style.top = (rect.top - pad) + 'px';
+    spotlight.style.left = (rect.left - pad) + 'px';
+    spotlight.style.width = (rect.width + pad * 2) + 'px';
+    spotlight.style.height = (rect.height + pad * 2) + 'px';
+
+    document.getElementById('tutorial-step-count').textContent = 'Paso ' + (tutorialIndex + 1) + ' de ' + TUTORIAL_STEPS.length;
+    document.getElementById('tutorial-title').textContent = step.title;
+    document.getElementById('tutorial-text').textContent = step.text;
+    document.getElementById('tutorial-prev').disabled = tutorialIndex === 0;
+    document.getElementById('tutorial-next').textContent = tutorialIndex === TUTORIAL_STEPS.length - 1 ? 'Finalizar' : 'Siguiente';
+
+    var card = document.getElementById('tutorial-card');
+    var margin = 16;
+    var cardWidth = card.offsetWidth || 300;
+    var cardHeight = card.offsetHeight || 180;
+
+    var left;
+    if (rect.right + margin + cardWidth <= window.innerWidth) {
+      left = rect.right + margin;
+    } else if (rect.left - margin - cardWidth >= 0) {
+      left = rect.left - margin - cardWidth;
+    } else {
+      left = Math.max(margin, Math.min(window.innerWidth - cardWidth - margin, rect.left));
+    }
+
+    var top;
+    if (rect.right + margin + cardWidth <= window.innerWidth || rect.left - margin - cardWidth >= 0) {
+      top = rect.top + rect.height / 2 - cardHeight / 2;
+    } else if (rect.bottom + margin + cardHeight <= window.innerHeight) {
+      top = rect.bottom + margin;
+    } else {
+      top = rect.top - margin - cardHeight;
+    }
+    top = Math.max(margin, Math.min(window.innerHeight - cardHeight - margin, top));
+
+    card.style.left = left + 'px';
+    card.style.top = top + 'px';
+  }
+
+  window.addEventListener('load', function() {
+    lucide.createIcons();
+    document.getElementById('tutorial-next').addEventListener('click', tutorialNext);
+    document.getElementById('tutorial-prev').addEventListener('click', tutorialPrev);
+    document.getElementById('tutorial-close').addEventListener('click', tutorialEnd);
+    tutorialMaybeStart();
+  });
+</script>
+<body>
+
+  <div class="app-container">
+
+    <!-- SIDEBAR FIXED -->
+    <nav class="icon-sidebar">
+      <div class="sidebar-logo-wrap">
+        <img src="img/mi-logo.png" class="sidebar-logo" alt="miECOM">
+      </div>
+      <div class="ico-group">
+        <div class="ico" id="tutorial-trigger" data-tooltip="Ver tutorial"><i data-lucide="help-circle"></i></div>
+        <div class="ico-pill">
+          <div class="ico active" data-tooltip="Inicio"><i data-lucide="house"></i></div>
+          <div class="ico" data-tooltip="Noticias"><i data-lucide="newspaper"></i></div>
+          <div class="ico" data-tooltip="Descuentos"><i data-lucide="tag"></i></div>
+          <div class="ico" data-tooltip="Contacto"><i data-lucide="message-circle"></i></div>
+          <div class="ico" data-tooltip="Accesibilidad"><i data-lucide="accessibility"></i></div>
+        </div>
+        <div class="theme-toggle" id="theme-toggle">
+          <div class="theme-toggle-thumb" id="theme-toggle-thumb"></div>
+          <div class="theme-toggle-opt active" id="theme-opt-light" onclick="setThemeMode('light')" title="Claro"><i data-lucide="sun"></i></div>
+          <div class="theme-toggle-opt" id="theme-opt-dark" onclick="setThemeMode('dark')" title="Oscuro"><i data-lucide="moon"></i></div>
+        </div>
+      </div>
+      <div class="ico" data-tooltip="Salir"><i data-lucide="log-out"></i></div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="body-layout">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <aside class="panel-fixed left-col">
+        <article class="bento-card profile-card">
+          <div class="profile-cover">
+            <img src="img/fondo.png" class="profile-cover-img" alt="">
+            <div class="photo-edit-overlay"><i data-lucide="camera"></i></div>
+          </div>
+          <div class="profile-avatar-wrap">
+            <img src="img/Foto-3.jpg" class="profile-avatar" alt="Foto de perfil">
+            <div class="photo-edit-overlay avatar-edit-overlay"><i data-lucide="camera"></i></div>
+          </div>
+          <div class="profile-body">
+            <div class="profile-name">Lucas Sebastián Valdez</div>
+            <div class="profile-desc">Diseñador gráfico enfocado en la identidad visual y la comunicación de marca.</div>
+            <div class="profile-pill">
+              <span>Área de Desarrollo</span>
+            </div>
+          </div>
+          <div class="profile-action-btns">
+            <button class="prof-btn"><i data-lucide="settings"></i><span class="action-label">Configuración</span></button>
+            <button class="prof-btn"><i data-lucide="pencil-line"></i><span class="action-label">Editar perfil</span></button>
+            <button class="prof-btn"><i data-lucide="image-plus"></i><span class="action-label">Editar foto</span></button>
+          </div>
+        </article>
+
+        <section class="bento-card memos-card">
+          <div class="memos-header">
+            <span class="memos-title">MEMOS</span>
+            <button class="memos-arrow-btn" id="memos-link-btn"><i data-lucide="arrow-up-right"></i><span class="action-label">Ir al sitio</span></button>
+          </div>
+          <div class="memos-stack" id="memos-stack">
+            <div class="memo-item">
+              <div class="memo-left">
+                <div class="memo-icon-wrap"><img src="img/memoscolor.svg" alt="memo"></div>
+              </div>
+              <div class="memo-body">
+                <div class="memo-item-title">Actualización de políticas internas</div>
+                <div class="memo-meta-row">
+                  <span class="memo-status nuevo">Nuevo</span>
+                  <span class="memo-date">14 jun</span>
+                  <button type="button" class="memo-readmore">Leer más</button>
+                </div>
+              </div>
+              <button type="button" class="memo-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
+            </div>
+            <div class="memo-item">
+              <div class="memo-left">
+                <div class="memo-icon-wrap"><img src="img/memoscolor.svg" alt="memo"></div>
+              </div>
+              <div class="memo-body">
+                <div class="memo-item-title">Reunión de equipo — Julio 2026</div>
+                <div class="memo-meta-row">
+                  <span class="memo-status visto">Visto</span>
+                  <span class="memo-date">10 jun</span>
+                  <button type="button" class="memo-readmore">Leer más</button>
+                </div>
+              </div>
+              <button type="button" class="memo-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
+            </div>
+            <div class="memo-item">
+              <div class="memo-left">
+                <div class="memo-icon-wrap"><img src="img/memoscolor.svg" alt="memo"></div>
+              </div>
+              <div class="memo-body">
+                <div class="memo-item-title">Nuevos beneficios para empleados</div>
+                <div class="memo-meta-row">
+                  <span class="memo-status nuevo">Nuevo</span>
+                  <span class="memo-date">1 jul</span>
+                  <button type="button" class="memo-readmore">Leer más</button>
+                </div>
+              </div>
+              <button type="button" class="memo-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
+            </div>
+          </div>
+        </section>
+
+        <div class="left-col-footer">Desarrollado por ECOM Chaco S.A.</div>
+      </aside>
+
+      <!-- SECCIÓN CENTRAL -->
+      <main class="center-col" id="center-dynamic-zone">
+
+        <div class="center-grid-view" id="center-default-grid">
+
+          <div class="widgets-panel" id="widgets-panel">
+          <div class="mini-widgets-row" id="mini-widgets-row">
+            <section class="bento-card widget-card apps-widget">
+              <div class="widget-header">
+                <div class="apps-view-switch" id="apps-view-switch">
+                  <button type="button" class="apps-view-seg active" id="apps-seg-apps" title="Aplicaciones" onclick="appsSwitchView('apps')">
+                    <i data-lucide="layout-grid"></i>
+                    <span class="seg-label-wrap"><span>Aplicaciones</span></span>
+                  </button>
+                  <button type="button" class="apps-view-seg" id="apps-seg-links" title="Enlaces" onclick="appsSwitchView('links')">
+                    <i data-lucide="paperclip"></i>
+                    <span class="seg-label-wrap"><span>Enlaces</span></span>
+                  </button>
+                </div>
+                <div class="apps-header-actions">
+                  <div class="apps-config-swap" id="apps-config-swap">
+                    <button type="button" class="apps-header-btn" id="apps-config-btn" title="Ajustes" onclick="appsToggleManageMode()"><i data-lucide="settings"></i><span class="action-label">Ajustes</span></button>
+                    <button type="button" class="apps-header-btn apps-finish-btn" id="apps-finish-btn" title="Finalizar" onclick="appsFinishManage()"><i data-lucide="check"></i><span class="action-label">Finalizar</span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="apps-quick-grid" id="apps-quick-grid"></div>
+              <div class="apps-links-view" id="apps-links-view" style="display:none"></div>
+            </section>
+
+            <section class="bento-card widget-card cumple-widget">
+              <div class="widget-header">
+                <span class="widget-title">Cumpleaños</span>
+                <div class="cumple-pager" id="cumple-pager"></div>
+                <button type="button" class="apps-header-btn cumple-calendar-btn" id="cumple-calendar-btn" style="display:none" title="Calendario" onclick="cumpleOpenCalendar()"><i data-lucide="calendar-days"></i><span class="action-label">Calendario</span></button>
+                <input type="text" id="cumple-date-input" class="cumple-date-input-hidden" readonly>
+              </div>
+              <div class="cumple-body" id="cumple-body">
+                <div class="cumple-list-layer" id="cumple-list-layer"></div>
+              </div>
+            </section>
+
+            <section class="bento-card widget-card efemerides-widget">
+              <div class="widget-header">
+                <span class="widget-title">Efemérides</span>
+                <div class="cumple-pager" id="efem-pager"></div>
+              </div>
+              <div class="efem-list" id="efem-list"></div>
+            </section>
+          </div>
+          </div>
+
+          <div class="news-panel">
+          <div class="news-mix-row">
+            <div class="news-main-slot">
+              <div class="news-featured-col" id="news-featured-col">
+                <div class="news-col-header">
+                  <span class="news-col-title">Noticias Destacadas</span>
+                  <span class="news-col-divider"></span>
+                  <div class="news-filter" id="news-filter"></div>
+                </div>
+                <div class="news-featured-list" id="news-featured-list"></div>
+              </div>
+              <div class="article-reader" id="article-reader" style="display:none;">
+                <button type="button" id="back-to-grid-btn" class="news-action-btn back-to-grid-btn" onclick="cerrarNoticia()"><i data-lucide="arrow-left"></i><span class="action-label">Volver al inicio</span></button>
+                <div class="article-reader-content" id="article-reader-content"></div>
+              </div>
+            </div>
+            <div class="news-secondary-col">
+              <div class="news-col-header">
+                <span class="news-col-title">Otras Noticias</span>
+              </div>
+              <div class="news-secondary-column" id="news-secondary-column"></div>
+            </div>
+          </div>
+          </div>
+
+        </div>
+
+        <div class="bento-card placeholder-view" id="placeholder-view" style="display:none;">
+          <i data-lucide="hammer" class="placeholder-icon"></i>
+          <h2 class="placeholder-title"></h2>
+          <p class="placeholder-text">Esta sección todavía está en construcción.</p>
+        </div>
+
+      </main>
+
+      <!-- COLUMNA DERECHA -->
+      <aside class="panel-fixed right-col">
+        <section class="bento-card novedades-card">
+          <div class="novedades-header">
+            <span class="novedades-title">Novedades</span>
+          </div>
+          <div class="novedades-slider" id="novedades-slider">
+            <img src="img/novedad1.jpeg" class="novedad-img active" alt="">
+            <img src="img/novedad2.jpeg" class="novedad-img" alt="">
+            <img src="img/novedad3.png" class="novedad-img" alt="">
+            <img src="img/novedad4.jpg" class="novedad-img" alt="">
+          </div>
+          <div class="novedades-progress-outer">
+            <div class="novedades-progress-track">
+              <div class="novedades-progress-fill" id="novedad-fill"></div>
+            </div>
+          </div>
+          <div class="novedades-thumbs" id="novedades-thumbs">
+            <div class="novedades-thumbs-viewport">
+              <div class="novedades-thumbs-track"></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- MODAL: EFEMÉRIDE -->
+  <div class="efem-modal" id="efem-modal" style="display:none">
+    <div class="efem-modal-bg" onclick="efemCloseModal()"></div>
+    <div class="efem-modal-inner">
+      <button type="button" class="efem-modal-close" onclick="efemCloseModal()"><i data-lucide="x"></i></button>
+      <div class="efem-modal-photo" id="efem-modal-photo"></div>
+      <div class="efem-modal-body">
+        <span class="efem-modal-date" id="efem-modal-date"></span>
+        <h3 class="efem-modal-title" id="efem-modal-title"></h3>
+        <p class="efem-modal-desc" id="efem-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP NOVEDADES -->
+  <div class="novedad-popup" id="novedad-popup" style="display:none">
+    <div class="novedad-popup-bg" id="novedad-popup-bg"></div>
+    <div class="novedad-popup-inner">
+      <button class="novedad-nav-btn" id="novedad-prev"><i data-lucide="chevron-left"></i></button>
+      <div class="novedad-popup-col">
+        <div class="novedad-popup-track">
+          <img class="novedad-popup-slide" id="popup-img-a" src="" alt="">
+          <img class="novedad-popup-slide" id="popup-img-b" src="" alt="">
+        </div>
+        <div class="novedades-thumbs novedades-thumbs-popup" id="novedades-thumbs-popup">
+          <div class="novedades-thumbs-viewport">
+            <div class="novedades-thumbs-track"></div>
+          </div>
+        </div>
+      </div>
+      <button class="novedad-nav-btn" id="novedad-next"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- TUTORIAL GUIADO -->
+  <div class="tutorial-overlay" id="tutorial-overlay" style="display:none">
+    <div class="tutorial-spotlight" id="tutorial-spotlight"></div>
+    <div class="tutorial-card" id="tutorial-card">
+      <button type="button" class="tutorial-close" id="tutorial-close" aria-label="Cerrar tutorial"><i data-lucide="x"></i></button>
+      <span class="tutorial-step-count" id="tutorial-step-count"></span>
+      <h3 class="tutorial-title" id="tutorial-title"></h3>
+      <p class="tutorial-text" id="tutorial-text"></p>
+      <div class="tutorial-actions">
+        <button type="button" class="tutorial-btn tutorial-btn-ghost" id="tutorial-prev">Atrás</button>
+        <button type="button" class="tutorial-btn tutorial-btn-primary" id="tutorial-next">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
